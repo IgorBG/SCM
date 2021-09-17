@@ -1,6 +1,6 @@
 # Упражнение. ABC анализ
 
-## версии:[ pdf](https://drive.google.com/file/d/1EGs98LiLlPmOOA5XEFVp19m324hfJRbP/view?usp=sharing)  [ html](https://docs.google.com/document/d/e/2PACX-1vR7No3HbUaqK63t9Kh2jL7wmw-aXi1IyFxdKLHssIDktJ3Qs69Xle3ZziTEhiPtrmuUWPuhD_NobT1B/pub)  [Gdoc](https://docs.google.com/document/d/1lCFyr1nVzuLfiR2o4rXv6WnQVM1DUaXZkfBMmz8x-mo/view)
+## версии:  [pdf](https://drive.google.com/file/d/1EGs98LiLlPmOOA5XEFVp19m324hfJRbP/view?usp=sharing)  [html](https://docs.google.com/document/d/e/2PACX-1vR7No3HbUaqK63t9Kh2jL7wmw-aXi1IyFxdKLHssIDktJ3Qs69Xle3ZziTEhiPtrmuUWPuhD_NobT1B/pub)  [Gdoc](https://docs.google.com/document/d/1lCFyr1nVzuLfiR2o4rXv6WnQVM1DUaXZkfBMmz8x-mo/view)
 Обичайната практика на фирмите включва разпределението на материалните ресурси в три основни категории - А, В, и С в зависимост от процента от общия оборот. Подобен анализ може да се направи и по други критерии (например брой или принос към печалбата на фирмата). Когато като основа на класификацията се използва общия оборот от материалните ресурси, при определянето на групите А, В и С се преминава през следните стъпки:
 1. Определя се общия оборот на цялото портфолио, както и за всеки артикул отделно.
 2. Оборотът на един артикул се разделя на общия, получи се делът на артикула в портфолиото.
