@@ -73,19 +73,23 @@ An agreement between the supplier and the customer to offer the item on negotiat
 In today's market conditions, every company strives to optimize inventory management in order to operate with minimal amounts of working capital, minimal inventory holding costs, and minimal investment costs for building warehouse capacity. Characteristic features of an inventory management policy - the so-called "Inventory dynamics" for each item during a certain period.
 
 ### Basic formulas
-Minimum level of stock in the warehouse: $$ Q_{min}=SS $$
-Maximum level of SKU in the warehouse: $$ Q_{max}=Q_{min}+Q_{ord} $$
-Average level of SKU in the warehouse: $$ \bar{I}=\frac{Q_{max}+Q_{min}}{2} $$
-Reorder point level: $$ R=\bar{d}L+SS $$
+Minimum level of stock in the warehouse:
+$$ Q_{min}=SS $$
+Maximum level of SKU in the warehouse:
+$$ Q_{max}=Q_{min}+Q_{ord} $$
+Average level of SKU in the warehouse:
+$$ \bar{I}=\frac{Q_{max}+Q_{min}}{2} $$
+Reorder point level: 
+$$ R=\bar{d}L+SS $$
 where:
-$$ \bar{d} $$ - average daily consumption
-$$ L $$ - time of execution of a delivery order after a request
-$$ Q_{max} $$ - the maximum planned level of the item
-$$ Q_{min} $$ - the minimum planned level of the item
-$$ \bar{I} $$ - the item's average planned level
-$$ SS $$ - amount of safety stock
-$$ Q_{ord} $$ - the agreed quantity in one delivery
-$$ R $$ - the critical stock level for reordering
+\bar{d} - average daily consumption
+L - time of execution of a delivery order after a request
+Q_{max} - the maximum planned level of the item
+Q_{min} - the minimum planned level of the item
+\bar{I} - the item's average planned level
+SS - amount of safety stock
+Q_{ord} - the agreed quantity in one delivery
+R - the critical stock level for reordering
 
 ### Repurchase Tier (R) Decisions
 Specialists in the procurement or supply department monitor inventory levels. They should place orders for delivery of a new lot of the item before stocks approach critical levels. This is a tricky task as the items have different dynamics. For these needs, information systems are often equipped with a tool that signals the approach of the stock levels of a certain item to the critical level.
@@ -101,7 +105,8 @@ Dynamics of the stock of 1 item in one company:
 -	Delivery time after request - 3 days (calendar)
 
 **If the company operates without the warranty stock.**
-We plan to deliver when $$ Q_i = 0 $$
+We plan to deliver when
+$$ Q_i = 0 $$
 $$ R = 5 * 3 + 0 = 15 + 0 = 15 pcs $$
 $$ Q_{max} = 0 + 30 = 30 pcs $$
 $$ Q_{min} = 0 pcs $$
@@ -123,12 +128,12 @@ $$ \bar{I} = \frac{40+10}{2} = 25 pcs $$
 
 #### Reordering Point in distribution centers:
 The point R for the entire distribution network is calculated in a similar way, substituting the values ​​for average values ​​for the entire chain:
-$$ R=\bar{d}\cdot L+z\cdot\sigma_d\cdot\sqrt{L} $$,
+$$ R=\bar{d}\cdot L+z\cdot\sigma_d\cdot\sqrt{L} $$
 where:
-$$ L $$ - time for delivery of the goods through the entire distribution chain: from the manufacturer, through DC, warehouses to retail auction.
-$$ \bar{d} $$ – average daily consumption across all retailers
-$$ \sigma_d $$ – standard deviation of aggregated demand from all retailers in the supply chain system
-$$ z = z(x) $$ - service factor (from Table 1.)
+L - time for delivery of the goods through the entire distribution chain: from the manufacturer, through DC, warehouses to retail auction.
+\bar{d} – average daily consumption across all retailers
+\sigma_d – standard deviation of aggregated demand from all retailers in the supply chain system
+z = z(x) - service factor (from Table 1.)
 
 **Table 1. Service factor according to the target service level**
 | 
@@ -150,14 +155,14 @@ A safety stock has several purposes: to cover variations in consumption
 #### The warranty stock to cover a set period
 When we are given the target level of the guarantee stock in days, it means that we have to ensure such quantity in the stock that would be enough for the specified period:
 $$ SS=\bar{d}\cdot T_{SS} $$
-$$ T_{SS} $$ – consumption in days covered by the guarantee stock
+T_{SS} – consumption in days covered by the guarantee stock
 **Example:**Warranty, insurance stock = 2 days; Average daily consumption = 5 pcs/day
 $$ SS = 5 * 2 = 10 pcs $$
 
 #### The warranty stock to cover delivery time under force majeure conditions
 Often, companies operate with the minimum permissible levels of insurance guarantee stock:
 $$ SS=\bar{d}\cdot T_{urgent} $$
-$$ T_{urgent} – delivery time in case of force majeure (urgent delivery)
+T_{urgent} – delivery time in case of force majeure (urgent delivery)
 **Example:**Express delivery time = 2 days; Average daily consumption = 5 pcs/day
 $$ SS = 5 * 2 = 10 pcs $$
 To achieve a higher level of service, the warranty stock can be increased.
@@ -165,8 +170,8 @@ To achieve a higher level of service, the warranty stock can be increased.
 #### The warranty stock to cover the target level of service
 When consumption is volatile (eg items from Y or Z group), the practice is to increase the safety stock level in view of the variation in consumption and target service level.
 $$ SS=z\cdot\sigma_d\cdot\sqrt{L} $$, where:
-$$ sigma_d $$ - the standard deviation of daily consumption,
-$$ z = z(x) $$ - coefficient depending on the target (set, planned) level of service (*x*) to the customers. It is selected from a table. (Table 1)
+sigma_d - the standard deviation of daily consumption,
+z = z(x) - coefficient depending on the target (set, planned) level of service (*x*) to the customers. It is selected from a table. (Table 1)
 
 #### High levels vs. low levels of warranty stock
 Typically, high levels of warranty stocks apply to certain goods and business practices - pharmaceuticals from a warehouse serving a hospital, supply of sites of strategic importance.
@@ -182,9 +187,9 @@ b) the deadline for production and incoming control can be ignored
 
 #### Delivery time as sum of components
 Request execution time (days):![](WARN_REPLACE_IMG_URL)
-$$ T_{prod} $$ - time for making the order
-$$ T_{trans} $$  - time to transport the order
-$$ T_{in} $$ - time for conducting incoming control
+T_{prod} - time for making the order
+T_{trans}  - time to transport the order
+T_{in} - time for conducting incoming control
 
 #### Consideration of uncertainty in the delivery time
 When the procurement department observes variations in the actual delivery times, it is often the case that the request is sent several days earlier. Thus, delays on the supplier's side are expected to be reduced. This approach is acceptable when an earlier delivery causes fewer problems than a later one. To include this time buffer, the following formula applies:
