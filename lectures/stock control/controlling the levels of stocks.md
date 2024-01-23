@@ -171,7 +171,9 @@ When we are given the target level of the guarantee stock in days, it means that
 $$ SS=\bar{d}\cdot T_{SS} $$
 
 T_{SS} – consumption in days covered by the guarantee stock
-**Example:**Warranty, insurance stock = 2 days; Average daily consumption = 5 pcs/day
+**Example:**
+Warranty, insurance stock = 2 days; Average daily consumption = 5 pcs/day
+
 $$ SS = 5 * 2 = 10 pcs $$
 
 #### The warranty stock to cover delivery time under force majeure conditions
@@ -180,8 +182,12 @@ Often, companies operate with the minimum permissible levels of insurance guaran
 $$ SS=\bar{d}\cdot T_{urgent} $$
 
 T_{urgent} – delivery time in case of force majeure (urgent delivery)
-**Example:**Express delivery time = 2 days; Average daily consumption = 5 pcs/day
+
+**Example:**
+Express delivery time = 2 days; Average daily consumption = 5 pcs/day
+
 $$ SS = 5 * 2 = 10 pcs $$
+
 To achieve a higher level of service, the warranty stock can be increased.
 
 #### The warranty stock to cover the target level of service
