@@ -74,13 +74,21 @@ In today's market conditions, every company strives to optimize inventory manage
 
 ### Basic formulas
 Minimum level of stock in the warehouse:
+
 $$ Q_{min}=SS $$
+
 Maximum level of SKU in the warehouse:
+
 $$ Q_{max}=Q_{min}+Q_{ord} $$
+
 Average level of SKU in the warehouse:
+
 $$ \bar{I}=\frac{Q_{max}+Q_{min}}{2} $$
+
 Reorder point level: 
+
 $$ R=\bar{d}L+SS $$
+
 where:
 \bar{d} - average daily consumption
 L - time of execution of a delivery order after a request
