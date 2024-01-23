@@ -133,8 +133,11 @@ Warranty, insurance stock - 10 pcs
 If we plan SS to always be available, then the supply from Qword must be realized at the moment when the 10 pieces from the guarantee stock will be reached.
 
 $$ R = 5 * 3 + 10 = 25 pcs $$
+
 $$ Q_{max} = 10 + 30 = 40 pcs $$
+
 $$ Q_min = 10 pcs $$
+
 $$ \bar{I} = \frac{40+10}{2} = 25 pcs $$
 
 ![](images\dynamics-withSS-4weeks.png
@@ -142,7 +145,9 @@ $$ \bar{I} = \frac{40+10}{2} = 25 pcs $$
 
 #### Reordering Point in distribution centers:
 The point R for the entire distribution network is calculated in a similar way, substituting the values ​​for average values ​​for the entire chain:
+
 $$ R=\bar{d}\cdot L+z\cdot\sigma_d\cdot\sqrt{L} $$
+
 where:
 L - time for delivery of the goods through the entire distribution chain: from the manufacturer, through DC, warehouses to retail auction.
 \bar{d} – average daily consumption across all retailers
@@ -150,15 +155,9 @@ L - time for delivery of the goods through the entire distribution chain: from t
 z = z(x) - service factor (from Table 1.)
 
 **Table 1. Service factor according to the target service level**
-| 
-(WARN_UNRECOGNIZED_ELEMENT: EQUATION)
- | 90% | 92% | 95% | 97% | 99% | 99.9% | 
+| x | 90% | 92% | 95% | 97% | 99% | 99.9% | 
 | --- | --- | --- | --- | --- | --- | --- |
-| 
-(WARN_UNRECOGNIZED_ELEMENT: EQUATION)
- | 1.29 | 1.46 | 1.65 | 1.88 | 2.33 | 3.08 | 
-
-(WARN_UNRECOGNIZED_ELEMENT: EQUATION)
+| z | 1.29 | 1.46 | 1.65 | 1.88 | 2.33 | 3.08 | 
 
 For example, if the target service level is 95%, the company should enter a service factor of 1.65 into the formula
 You can independently calculate service factor using spreadsheets using function NORM.S.INV (or NORMSINV depending on software version)
@@ -168,14 +167,18 @@ A safety stock has several purposes: to cover variations in consumption
 
 #### The warranty stock to cover a set period
 When we are given the target level of the guarantee stock in days, it means that we have to ensure such quantity in the stock that would be enough for the specified period:
+
 $$ SS=\bar{d}\cdot T_{SS} $$
+
 T_{SS} – consumption in days covered by the guarantee stock
 **Example:**Warranty, insurance stock = 2 days; Average daily consumption = 5 pcs/day
 $$ SS = 5 * 2 = 10 pcs $$
 
 #### The warranty stock to cover delivery time under force majeure conditions
 Often, companies operate with the minimum permissible levels of insurance guarantee stock:
+
 $$ SS=\bar{d}\cdot T_{urgent} $$
+
 T_{urgent} – delivery time in case of force majeure (urgent delivery)
 **Example:**Express delivery time = 2 days; Average daily consumption = 5 pcs/day
 $$ SS = 5 * 2 = 10 pcs $$
@@ -183,7 +186,9 @@ To achieve a higher level of service, the warranty stock can be increased.
 
 #### The warranty stock to cover the target level of service
 When consumption is volatile (eg items from Y or Z group), the practice is to increase the safety stock level in view of the variation in consumption and target service level.
-$$ SS=z\cdot\sigma_d\cdot\sqrt{L} $$, where:
+
+$$ SS=z\cdot\sigma_d\cdot\sqrt{L} $$
+
 sigma_d - the standard deviation of daily consumption,
 z = z(x) - coefficient depending on the target (set, planned) level of service (*x*) to the customers. It is selected from a table. (Table 1)
 
@@ -200,15 +205,21 @@ b) the supplier has an absolutely strict production and delivery plan (JIT appro
 b) the deadline for production and incoming control can be ignored
 
 #### Delivery time as sum of components
-Request execution time (days):![](WARN_REPLACE_IMG_URL)
+Request execution time (days):
+
+$$ L=T_{prod}+T_{trans}+T_{in} $$
+
 T_{prod} - time for making the order
 T_{trans}  - time to transport the order
 T_{in} - time for conducting incoming control
 
 #### Consideration of uncertainty in the delivery time
 When the procurement department observes variations in the actual delivery times, it is often the case that the request is sent several days earlier. Thus, delays on the supplier's side are expected to be reduced. This approach is acceptable when an earlier delivery causes fewer problems than a later one. To include this time buffer, the following formula applies:
+
 $$ R = \bar d \cdot \bar L + z \cdot \sigma_L \cdot \bar d $$
+
 When the variation has a strong impact on both demand and lead time, the following formula applies ([Source](https://slideplayer.com/slide/1480812/)):
+
 $$ R=\bar{d} \cdot \bar{L}+z\cdot\sqrt{\bar{L} \cdot\sigma_d^2+\bar{d^2}\cdot\sigma_L^2} $$
 
 #### Consideration of weekends/holidays
