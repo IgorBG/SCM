@@ -36,17 +36,24 @@ Below we will begin by reviewing the simplified models - one item, one supplier,
 The task of estimating average stocks seems trivial at first glance. The most accurate indicators of average stocks could be given by a system that tracks current stocks in real time. But even it does not always give accurate values ​​when we need to plan the average stocks in the future. For planning purposes, we may use different to find average inventory, depending on the data available and the desired accuracy:
 
 *a) Average inventory = Inventory level at the end of the current period*
-![](WARN_REPLACE_IMG_URL)
+
+$$ \overline{I}=Q_{end} $$
+
 This approach is applicable to a very rough estimate. It gives relatively accurate values ​​if the products required for consumption in the current month are withdrawn from the warehouse at the very beginning of the period.
 
 *b) Average inventory = Inventory level at the end of the current period + half of the SKU consumption for the period*
-![](WARN_REPLACE_IMG_URL)
+
+$$ \overline{I}=Q_{end}+\frac{D}{2} $$
+
 The higher accuracy variation of the above model. Consider that products intended for consumption in the current month use a significant amount of warehouse capacity and have an impact on current and average stocks. It gives high accuracy when the products intended for consumption in the current month are consumed evenly throughout the period.
 *c) Average inventory = (maximum inventory level + minimum inventory level) / 2*
-![](WARN_REPLACE_IMG_URL)
+
+$$ \overline{I}=\frac{Q_{\max}+Q_{\min}}{2} $$
 
 *d) Average stock = the averaged stock data from several blocks (inventories)*
-![](WARN_REPLACE_IMG_URL)
+
+$$  \overline{I}= \sum \frac{Q_i}{n} $$
+
 It is used when there is data collected about the availability in the warehouse during relatively short intervals of time. It gives the more accurate result the higher the frequency of +- checks and the more stable the stock level (low variability in consumption).
 
 ### Reorder Point - Reorder Point (R or ROP)
@@ -66,26 +73,26 @@ An agreement between the supplier and the customer to offer the item on negotiat
 In today's market conditions, every company strives to optimize inventory management in order to operate with minimal amounts of working capital, minimal inventory holding costs, and minimal investment costs for building warehouse capacity. Characteristic features of an inventory management policy - the so-called "Inventory dynamics" for each item during a certain period.
 
 ### Basic formulas
-Minimum level of stock in the warehouse:![](WARN_REPLACE_IMG_URL)
-Maximum level of SKU in the warehouse:![](WARN_REPLACE_IMG_URL)
-Average level of SKU in the warehouse:![](WARN_REPLACE_IMG_URL)
-Retry signal level:![](WARN_REPLACE_IMG_URL)
+Minimum level of stock in the warehouse: $$ Q_{min}=SS $$
+Maximum level of SKU in the warehouse: $$ Q_{max}=Q_{min}+Q_{ord} $$
+Average level of SKU in the warehouse: $$ \bar{I}=\frac{Q_{max}+Q_{min}}{2} $$
+Reorder point level: $$ R=\bar{d}L+SS $$
 where:
-![](WARN_REPLACE_IMG_URL)- average daily consumption
-L - time of execution of a delivery order after a request
-Qmax - the maximum planned level of the item
-Qmin - the minimum planned level of the item
-![](WARN_REPLACE_IMG_URL)- the item's average planned level
-SS - amount of warranty stock
-Qword - the agreed quantity in one delivery
-R - signal level for re-request
+$$ \bar{d} $$ - average daily consumption
+$$ L $$ - time of execution of a delivery order after a request
+$$ Q_{max} $$ - the maximum planned level of the item
+$$ Q_{min} $$ - the minimum planned level of the item
+$$ \bar{I} $$ - the item's average planned level
+$$ SS $$ - amount of safety stock
+$$ Q_{ord} $$ - the agreed quantity in one delivery
+$$ R $$ - the critical stock level for reordering
 
 ### Repurchase Tier (R) Decisions
 Specialists in the procurement or supply department monitor inventory levels. They should place orders for delivery of a new lot of the item before stocks approach critical levels. This is a tricky task as the items have different dynamics. For these needs, information systems are often equipped with a tool that signals the approach of the stock levels of a certain item to the critical level.
 In the figure below, the ROP level signals the procurement department in need of requisitioning the new lot.
 
 ![](WARN_REPLACE_IMG_URL)
-*Fig. 1. Point of repeat purchase*
+*Fig. 1. Point for the new purchase*
 
 Dynamics of the stock of 1 item in one company:
 -	Initial stock of the item - 40 pcs.
@@ -94,32 +101,34 @@ Dynamics of the stock of 1 item in one company:
 -	Delivery time after request - 3 days (calendar)
 
 **If the company operates without the warranty stock.**
-We plan to deliver when Qi = 0
-R = 5 * 3 + 0 = 15 + 0 = 15 br
-Qmax = 0 + 30 = 30 pcs
-Qmin = 0 pcs
-![](WARN_REPLACE_IMG_URL)= (30+0)/2 = 15 pcs
-![](WARN_REPLACE_IMG_URL)
+We plan to deliver when $$ Q_i = 0 $$
+$$ R = 5 * 3 + 0 = 15 + 0 = 15 pcs $$
+$$ Q_{max} = 0 + 30 = 30 pcs $$
+$$ Q_{min} = 0 pcs $$
+$$ \bar{I} = \frac{30+0}{2} = 15 pcs $$
+
+![](images\dynamics-noSS-4weeks.png)
 *Fig. 2. Dynamics of stocks without warranty stock*
 
 **If the company provides for the warranty stock.**
 Warranty, insurance stock - 10 pcs
 If we plan SS to always be available, then the supply from Qword must be realized at the moment when the 10 pieces from the guarantee stock will be reached.
-R = 5 * 3 + 10 = 25 br
-Qmax = 10+30 = 40 pcs
-Qmin = 10 pcs
-![](WARN_REPLACE_IMG_URL)= (40+10)/2 = 25 pcs
-![](WARN_REPLACE_IMG_URL)
+$$ R = 5 * 3 + 10 = 25 pcs $$
+$$ Q_{max} = 10 + 30 = 40 pcs $$
+$$ Q_min = 10 pcs $$
+$$ \bar{I} = \frac{40+10}{2} = 25 pcs $$
+
+![](images\dynamics-withSS-4weeks.png
 *Fig. 3. Dynamics of stocks with warranty stock (vertical axis = stock level; horizontal axis = days)*
 
 #### Reordering Point in distribution centers:
 The point R for the entire distribution network is calculated in a similar way, substituting the values ​​for average values ​​for the entire chain:
-![](WARN_REPLACE_IMG_URL),
+$$ R=\bar{d}\cdot L+z\cdot\sigma_d\cdot\sqrt{L} $$,
 where:
-L- time for delivery of the goods through the entire distribution chain: from the manufacturer, through DC, warehouses to retail auction.
-![](WARN_REPLACE_IMG_URL)– average daily consumption across all retailers
-![](WARN_REPLACE_IMG_URL)– standard deviation of aggregated demand from all retailers in the supply chain system
-![](WARN_REPLACE_IMG_URL)- service factor (from Table 1.)
+$$ L $$ - time for delivery of the goods through the entire distribution chain: from the manufacturer, through DC, warehouses to retail auction.
+$$ \bar{d} $$ – average daily consumption across all retailers
+$$ \sigma_d $$ – standard deviation of aggregated demand from all retailers in the supply chain system
+$$ z = z(x) $$ - service factor (from Table 1.)
 
 **Table 1. Service factor according to the target service level**
 | 
@@ -140,24 +149,24 @@ A safety stock has several purposes: to cover variations in consumption
 
 #### The warranty stock to cover a set period
 When we are given the target level of the guarantee stock in days, it means that we have to ensure such quantity in the stock that would be enough for the specified period:
-![](WARN_REPLACE_IMG_URL)
-*T**SS* – consumption in days covered by the guarantee stock
+$$ SS=\bar{d}\cdot T_{SS} $$
+$$ T_{SS} $$ – consumption in days covered by the guarantee stock
 **Example:**Warranty, insurance stock = 2 days; Average daily consumption = 5 pcs/day
-*SS *= 5 * 2 = 10 pcs
+$$ SS = 5 * 2 = 10 pcs $$
 
 #### The warranty stock to cover delivery time under force majeure conditions
 Often, companies operate with the minimum permissible levels of insurance guarantee stock:
-![](WARN_REPLACE_IMG_URL)
-*T**urgent* – delivery time in case of force majeure (urgent delivery)
+$$ SS=\bar{d}\cdot T_{urgent} $$
+$$ T_{urgent} – delivery time in case of force majeure (urgent delivery)
 **Example:**Express delivery time = 2 days; Average daily consumption = 5 pcs/day
-*SS *= 5 * 2 = 10 pcs
+$$ SS = 5 * 2 = 10 pcs $$
 To achieve a higher level of service, the warranty stock can be increased.
 
 #### The warranty stock to cover the target level of service
 When consumption is volatile (eg items from Y or Z group), the practice is to increase the safety stock level in view of the variation in consumption and target service level.
-![](WARN_REPLACE_IMG_URL), where:
-pd - the standard deviation of daily consumption,
-![](WARN_REPLACE_IMG_URL)Coefficient depending on the target (set, planned) level of service (*x*) to the customers. It is selected from a table. (Table 1)
+$$ SS=z\cdot\sigma_d\cdot\sqrt{L} $$, where:
+$$ sigma_d $$ - the standard deviation of daily consumption,
+$$ z = z(x) $$ - coefficient depending on the target (set, planned) level of service (*x*) to the customers. It is selected from a table. (Table 1)
 
 #### High levels vs. low levels of warranty stock
 Typically, high levels of warranty stocks apply to certain goods and business practices - pharmaceuticals from a warehouse serving a hospital, supply of sites of strategic importance.
@@ -173,15 +182,15 @@ b) the deadline for production and incoming control can be ignored
 
 #### Delivery time as sum of components
 Request execution time (days):![](WARN_REPLACE_IMG_URL)
-*T**prod* - time for making the order
-*T**trans* - time to transport the order
-*T**in* - time for conducting incoming control
+$$ T_{prod} $$ - time for making the order
+$$ T_{trans} $$  - time to transport the order
+$$ T_{in} $$ - time for conducting incoming control
 
 #### Consideration of uncertainty in the delivery time
 When the procurement department observes variations in the actual delivery times, it is often the case that the request is sent several days earlier. Thus, delays on the supplier's side are expected to be reduced. This approach is acceptable when an earlier delivery causes fewer problems than a later one. To include this time buffer, the following formula applies:
-![](WARN_REPLACE_IMG_URL)
+$$ R = \bar d \cdot \bar L + z \cdot \sigma_L \cdot \bar d $$
 When the variation has a strong impact on both demand and lead time, the following formula applies ([Source](https://slideplayer.com/slide/1480812/)):
-![](WARN_REPLACE_IMG_URL)
+$$ R=\bar{d} \cdot \bar{L}+z\cdot\sqrt{\bar{L} \cdot\sigma_d^2+\bar{d^2}\cdot\sigma_L^2} $$
 
 #### Consideration of weekends/holidays
 When planning deliveries, the procurement specialist takes into account the working days of both the own outlets and those of the supplier. Company holidays affect consumption, while supplier holidays affect delivery time. When calculating consumption time during the delivery time, holidays should be taken into account as follows:
