@@ -114,10 +114,15 @@ Dynamics of the stock of 1 item in one company:
 
 **If the company operates without the warranty stock.**
 We plan to deliver when
+
 $$ Q_i = 0 $$
+
 $$ R = 5 * 3 + 0 = 15 + 0 = 15 pcs $$
+
 $$ Q_{max} = 0 + 30 = 30 pcs $$
+
 $$ Q_{min} = 0 pcs $$
+
 $$ \bar{I} = \frac{30+0}{2} = 15 pcs $$
 
 ![](images\dynamics-noSS-4weeks.png)
@@ -126,6 +131,7 @@ $$ \bar{I} = \frac{30+0}{2} = 15 pcs $$
 **If the company provides for the warranty stock.**
 Warranty, insurance stock - 10 pcs
 If we plan SS to always be available, then the supply from Qword must be realized at the moment when the 10 pieces from the guarantee stock will be reached.
+
 $$ R = 5 * 3 + 10 = 25 pcs $$
 $$ Q_{max} = 10 + 30 = 40 pcs $$
 $$ Q_min = 10 pcs $$
