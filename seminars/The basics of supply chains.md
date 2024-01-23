@@ -85,8 +85,11 @@ Table 1. Six Target Indicators for Evaluating Supply Chain Performance
 
 ### Example:
 Compare the efficiency of the following circuits (Ikea and Jysk):
-![Ikea](WARN_REPLACE_IMG_URL)![Jusk](WARN_REPLACE_IMG_URL)
+![Ikea](https://github.com/IgorBG/SCM/blob/main/seminars/resources/ikea_logo_320pxw.png)
+![Jusk](https://raw.githubusercontent.com/IgorBG/SCM/main/seminars/resources/jysk_logo_320pxw.png)
+
 Image sources: IKEA - [https://en.m.wikipedia.org/wiki/file:Ikea_logo.svg](https://en.m.wikipedia.org/wiki/File:Ikea_logo.svg);
+
 Jysk - [https://en.m.wikipedia.org/wiki/File:Jysk_logo.svg](https://en.m.wikipedia.org/wiki/File:Jysk_logo.svg);
 
 ## Conflicts of interests between the participants in the SC
