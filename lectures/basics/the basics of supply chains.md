@@ -13,7 +13,7 @@ Keywords: supply chain profitability, supply chain elements, supply chain decisi
 Supply chains consist of all organizations involved directly or indirectly in fulfilling the requirements of end customers. A supply chain does not only consist of a manufacturer and a supplier, but also includes organizations involved in transportation, warehousing, retailing, as well as the customers themselves. Within any organization—for example, a manufacturer—the supply chain includes all functions involved in fulfilling customer orders. These include new product development, marketing, manufacturing, distribution, finance and customer service.
 In a supply chain, a manufacturer receives materials from several different suppliers and in turn supplies finished products to various distributors. Most supply chains are actually supply networks, an example diagram is shown in the following figure:
 
-![](https://raw.githubusercontent.com/IgorBG/SCM/main/seminars/resources/scm%20structure%20eng.png)
+![](images/scm%20structure%20eng.png)
 *Figure 2. A simple supply chain structure*
 
 ### Main tasks
