@@ -36,7 +36,7 @@ Looking at the structure of the total costs of supplying a business unit with SK
 
 - Holding cost.
 
-![total inventory operational cost tic total logistic cost tlc total holding cost thc total fixed cost tfc total material cost tmc](/images/EGT-total-inventory-operational-cost-tic-total.png)
+![total inventory operational cost tic total logistic cost tlc total holding cost thc total fixed cost tfc total material cost tmc](images/EGT-total-inventory-operational-cost-tic-total.png)
 
 *Figure 1. Components of inventory operational costs*
 
@@ -44,7 +44,7 @@ Looking at the structure of the total costs of supplying a business unit with SK
 
 *Total cost of acquisition = SKU Unit cost * Quantity of SKU purchased*
 
-$ TMC=V*D $$
+$ TMC=V*D $
 
 **Total Fixed Cost (TFC)**. How much money will be spent on the organization of the deliveries themselves. Mostly for their transportation to the enterprise.
 
