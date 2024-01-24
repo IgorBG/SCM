@@ -44,7 +44,7 @@ Looking at the structure of the total costs of supplying a business unit with SK
 
 *Total cost of acquisition = SKU Unit cost * Quantity of SKU purchased*
 
-$ TMC=V*D $
+$$ TMC=V*D $$
 
 **Total Fixed Cost (TFC)**. How much money will be spent on the organization of the deliveries themselves. Mostly for their transportation to the enterprise.
 
@@ -64,14 +64,14 @@ $ TMC=V*D $
 Example: if the fixed cost for the application is EUR 100, then when ordering 1 piece of production, all EUR 100 costs will fall on this piece. But if we order 20 pieces, then each piece in the batch will carry only EUR 5 distributed cost.
 
 
-![a graph showing ordering costs holding costs and logistics costs](/images/ZNM-graph-showing-ordering-costs-holding-costs.png)
+![ordering costs holding costs and logistics costs](images/scm_tfc_total_fixed_costs_allocation_eng.png)
 
 *Fig.2. Allocation of fixed application costs*
 
 
 **Total Holding Cost (THC)**. It shows how much funds we have to set aside to own the materials.
 
-*Total Holding Cost = Average Inventory Value * Holding Cost Rate.*
+*Total Holding Cost = Average Inventory Value * Holding Cost Rate*
 
 **Average Inventory Value**. It reflects the average level of the monetary value of the stock "closed" in the warehouse.
 
@@ -81,11 +81,12 @@ Example: if the fixed cost for the application is EUR 100, then when ordering 1 
 **Allocation of holding cost**. When we relate the total holding cost to the lot size purchased, we notice that its value increases as the lot size increases. When 1 piece is purchased, we will bear the storage costs only for it, and only for a short period of its storage in the warehouse. As we increase the lot size, the period in which these products remain also increases.
 
 
-![a graph showing ordering costs holding costs and logistics costs](/images/kq0-graph-showing-ordering-costs-holding-costs.png)
+![holding costs for different lot sizes](images/scm_thc_total_holding_costs_allocation_eng.png)
+
 *Fig.3. Allocation of holding costs*
 
 
-**Holding cost**** Rate (r)**. Complex indicator. It reflects the expected cost for every EUR 1 of production brought into the warehouse for storage during a certain period. This indicator reflects costs for rent/maintenance of warehouse space, electricity, interest on loans taken for the purchase of SKU and other costs related to the residence of SKU in our warehouse.
+**Holding cost Rate (r)**. Complex indicator. It reflects the expected cost for every EUR 1 of production brought into the warehouse for storage during a certain period. This indicator reflects costs for rent/maintenance of warehouse space, electricity, interest on loans taken for the purchase of SKU and other costs related to the residence of SKU in our warehouse.
 
 How to calculate Holding cost rate?
 
@@ -93,7 +94,7 @@ Example: We bought 100 kg of frozen meat. Price - EUR 4/kg. We store it in a fre
 
 Solution: the rent of 1 sq.m. warehouse is EUR 10/month. The freezer takes up 2 square meters, that is - EUR 20/month. Electricity for the freezer - another EUR 20/month. So the storage of 100 kg of meat = EUR 40/month. Therefore, the cost for 1 kg staying in the warehouse for 1 month = EUR 0.4. If 1 kg of meat costs EUR 4, then every EUR 1 spent on the purchase of frozen meat generates EUR 0.1 holding cost for every 1 month of storage.
 
-Answer: EUR 0.1/EUR*month or 10%/EUR*month.
+Answer: EUR 0.1/EUR * month or 10%/EUR * month.
 
 **Total Logistics Cost (TLC)**. They reflect the total amount of funds needed to arrange deliveries and store SKU in the warehouse during a certain period of time.
 
@@ -105,7 +106,7 @@ $$ TLC=TFC+THC $$
 **Allocation of logistics costs**. When we relate the logistics costs to the lot size purchased, we notice that they decrease to a certain minimum, and after that increase with the lot size. Note that the minimum is located at such a point of lot size when fixed costs and holding costs are equal.
 
 
-![](/images/f1q_Image_6.png)
+![](images/scm_tlc_total_logistic_costs_allocation_eng.png)
 *Fig.4. Allocation of logistics costs*
 
 
@@ -156,7 +157,7 @@ Why and where do we use these models given so many severe limitations?
 
 **Average inventory during the period**. With constant consumption, we most often use the formula reflecting half of the supply.
 
-![\overline{I}=\frac{Q_{ord}}{2}](/images/NtF-overlineifracq_ord2.png)
+$$ \overline{I}=\frac{Q_{ord}}{2} $$
 
 
 This formula does not take into account safety stock. If you have one, you should use a different formula from the one presented at the beginning of the lecture.
@@ -169,28 +170,27 @@ Example: consumption is 100 pcs/month, delivery is 400 pcs, consumption is const
 
 **Total Holding cost (THC)**. With constant consumption, to calculate average inventory value, we usually use the above formula for average inventory (Q/2). In specific situations, this part of the formula can be substituted.
 
-![THC=\frac{Q_{ord}}{2}\cdot V\cdot r](/images/NOY-thcfracq_ord2cdot-vcdot-r.png)
+$$ THC=\frac{Q_{ord}}{2}\cdot V\cdot r $$
 
 
-![D/Q](/images/dC9-dq.gif)
-
+$$ D/Q $$
 *Number of deliveries for the period = Quantity of purchased SKUs / Quantity of SKUs in one delivery*
 
 **Period Fixed Cost (TFC)**. With constant consumption, we include in the formula the method described above for calculating the number of deliveries for the period.
 
-![TFC=\frac{D}{Q_{ord}}\cdot A](/images/dgp-tfcfracdq_ordcdot.png)
+$$ TFC=\frac{D}{Q_{ord}}\cdot A $$
 
 **Total Logistics Cost (TLC)**. With constant consumption, we use the corresponding formulas for fixed and holding costs.
 
-![TLC=TFC+THC](/images/jWD-tlctfcthc.png)
+$$ TLC=TFC+THC $$
 
-![TLC=\frac{D}{Q_{ord}}\cdot A+\frac{Q_{ord}}{2}\cdot V\cdot r](/images/pAI-tlcfracdq_ordcdot-afracq_ord2cdot-vcdot-r.png)
+$$ TLC=\frac{D}{Q_{ord}}\cdot A+\frac{Q_{ord}}{2}\cdot V\cdot r $$
 
 **Total Inventory Management Cost (TIC)**. With constant consumption, we use the corresponding formulas for fixed and holding costs:
 
-![TIC=TMC+TFC+THC](/images/hSU-tictmctfcthc.png)
+$$ TIC=TMC+TFC+THC $$
 
-![TIC=V\cdot D+\frac{D}{Q_{ord}}\cdot A+\frac{Q_{ord}}{2}\cdot V\cdot r](/images/hXP-ticvcdot-dfracdq_ordcdot-afracq_ord2cdot-vcdot.png)
+$$ TIC=V\cdot D+\frac{D}{Q_{ord}}\cdot A+\frac{Q_{ord}}{2}\cdot V\cdot r $$
 
 ### Modifications to the base model: providing a discount for big lot sizes.
 
@@ -213,24 +213,22 @@ With this price offer, the supplier incentivizes customers to place larger order
 
 In a table, we can reflect a similar approach to applying discounts in the following form:
 
-| Price levels | Qty. from | Col. before | Price |
+| Price levels | Qty. start | Qty. end | Price |
 | --- |  --- |  --- |  --- | 
 | Minimal order quantity limit | 0 | Q0 | N/A |
-| Basic price | Q0 | Q1 | IN0 |
-| Discount price d1 | Q1 | Q2 | IN0*(1 - d1) |
+| Basic price | Q0 | Q1 | V0 |
+| Discount price d1 | Q1 | Q2 | V0*(1 - d1) |
 | ? | ? | ? | ? |
-| Discount price dn | Qk-1 | Qk | IN0*(1 - dn) |
+| Discount price dn | Qk-1 | Qk | V0*(1 - dn) |
 
 The same can be represented by a system of equations:
 
-![V = \begin{cases}
- & V_{0} \\ 
- & V_{0} (1-d) \interval
+$$
+V = \begin{cases}
+ & V_{0} \qquad \qquad 0 \leq Q \leq Q_{1} \\ 
+ & V_{0} (1-d) \qquad Q_{1} \leq Q
 \end{cases}
-](/images/AN6-v--begincases--v_0---v_0-1-d-interval-endcases-.gif)
-![0 \leq Q \leq Q_{1} \\ 
-Q_{1} \leq Q
-](/images/aLX-0-leq-q-leq-q_1--q_1-leq-q-.gif)
+$$
 
 Example: the base price of the product is EUR 30. The discount for larger quantities is 15%. What is the price with the discount?
 
@@ -246,11 +244,11 @@ Answer:
 
 If we need to reflect the discounts in our prices, we will modify the formulas for the total cost of inventory management. Instead of the uniform price V, we will use a discount price V~0~*(1 - d). 
 
-![TIC=DV_0\cdot(1-d)+\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r](/images/QU8-ticdv_0cdot1-dfracdqcdot-afracq2cdot.png)
+$$ TIC=DV_0\cdot(1-d)+\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r $$
 
 When working with the base price (no discount), we can omit (1 - d):
 
-![TIC=D\cdot V_0+\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r](/images/aGU-ticdcdot-v_0fracdqcdot-afracq2cdot-v_0cdot-r.png)
+$$ TIC=D\cdot V_0+\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r $$
 
 Using the formulas provided, procurement professionals can decide whether the benefit of the discount provided by ordering larger quantities would exceed the Holding cost, which also increases as order volume increases.
 
@@ -286,9 +284,9 @@ We will assume a few additional conditions to simplify the model:
 
 Below is a framework of one such model describing the supply, consumption and backlog in a warehouse on a monthly basis over a year.
 
-![](/images/NwA_Image_20.png)
+![](images/supply_plan_01_eng.png)
 
-*Figure 5. Visual representation of the supply planning spreadsheet model. Top: area of ??fixed indicators, below - dynamic indicators.*
+*Figure 5. Visual representation of the supply planning spreadsheet model. Top: area of fixed indicators, below - dynamic indicators.*
 
 #### The formulas used in the spreadsheet model
 
@@ -318,7 +316,7 @@ I = Q(i-1)~end~ + Q(i)~ord~ - d(i)/2
 
 Quantity in one delivery covering n periods (Q~ord~(k)).
 
-Q~ord~(k) = d1 + d2 + ? + dn
+Q~ord~(k) = d1 + d2 + ... + dn
 
 Where d1 is consumption in the first month, d2 is in the second month.
 
@@ -326,19 +324,19 @@ Where d1 is consumption in the first month, d2 is in the second month.
 
 To build the spreadsheet model let's start by plotting consumption.
 
-![](/images/E7z_Image_21.png)
+![](images/constant_consumption_01_eng.png)
 
 *Figure 6. Example of a constant consumption of a SKU (100pcs/month)*
 
 Let's assume that the supply specialist decides that deliveries will be made evenly every 4 months. This means that each delivery will include 400 pcs.
 
-![](/images/SQN_Image_22.png)
+![](images/constant_consumption_02_eng.png)
 
 *Figure 7. Four-month period deliveries at constant consumption of SKU*
 
 We add stock level to each month. Thus, at the beginning of January, the stock is at the level of 400 pieces. This is Q~max~. During the month we use up 100 and at the end of the month we have 300 left. This is Q~min~. The average stock in January, respectively, will be 350 pcs.
 
-![](/images/JNt_Image_23.png)
+![](images/constant_consumption_03_eng.png)
 
 *Figure 8. Consumption, supply, and average inventory in the table model for supply planning at constant consumption.*
 
@@ -350,19 +348,19 @@ Let's see how the spreadsheet model can be used to model the supply plan under v
 
 Graphically and tabularly, the dynamics of variable consumption can look like this:
 
-![](/images/KcB_Image_24.png)
+![](images/variable_consumption_01_eng.png)
 
 *Figure 9. Variable consumption in the spreadsheet model for replenishment process.*
 
 Let's assume that the supply specialist decides that deliveries will take place every 4 months. Each delivery will include exactly the amount needed for 4 months. With consumption for the first 4 months, this means that 214 units will be included in the first delivery (consumption from January to April: 10+62+12+130).
 
-![](/images/G2s_Image_25.png)
+![](images/variable_consumption_02_eng.png)
 
 *Figure 10. Variable consumption and delivery in the spreadsheet model for replenishment process.*
 
 We add stock level to each month. Thus, at the beginning of January, the stock was at the level of 214 pieces. This is Q~max~. During the month we use up 10, and at the end of the month we have 204 left. This is Q~min~. The average stock in January, respectively, will be 209 pcs.
 
-![](/images/zOv_Image_26.png)
+![](images/variable_consumption_03_eng.png)
 
 *Figure 11. Variable consumption, delivery and average inventory in the spreadsheet model for replenishment process.*
 
