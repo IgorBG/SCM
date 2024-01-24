@@ -172,8 +172,8 @@ Example: consumption is 100 pcs/month, delivery is 400 pcs, consumption is const
 
 $$ THC=\frac{Q_{ord}}{2}\cdot V\cdot r $$
 
-
 $$ D/Q $$
+
 *Number of deliveries for the period = Quantity of purchased SKUs / Quantity of SKUs in one delivery*
 
 **Period Fixed Cost (TFC)**. With constant consumption, we include in the formula the method described above for calculating the number of deliveries for the period.
