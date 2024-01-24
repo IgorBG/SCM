@@ -44,7 +44,7 @@ Looking at the structure of the total costs of supplying a business unit with SK
 
 *Total cost of acquisition = SKU Unit cost * Quantity of SKU purchased*
 
-![\bg_white TMC=V\cdot D](/images/31b-bg_white-tmcvcdot.gif)
+$ TMC=V*D $$
 
 **Total Fixed Cost (TFC)**. How much money will be spent on the organization of the deliveries themselves. Mostly for their transportation to the enterprise.
 
@@ -99,7 +99,7 @@ Answer: EUR 0.1/EUR*month or 10%/EUR*month.
 
 *Total logistics costs = Total fixed costs + Total holding costs*
 
-![TLC=TFC+THC](/images/YXB-tlctfcthc.gif)
+$$ TLC=TFC+THC $$
 
 
 **Allocation of logistics costs**. When we relate the logistics costs to the lot size purchased, we notice that they decrease to a certain minimum, and after that increase with the lot size. Note that the minimum is located at such a point of lot size when fixed costs and holding costs are equal.
@@ -113,7 +113,7 @@ Answer: EUR 0.1/EUR*month or 10%/EUR*month.
 
 *Total inventory operational cost = Total acquisition cost + Total fixed cost + Total holding cost*
 
-![TIC=TMC+TFC+THC](/images/09I-tictmctfcthc.png)
+$$ TIC=TMC+TFC+THC $$
 
 ## Developing replenishment plan
 
