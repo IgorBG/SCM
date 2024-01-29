@@ -34,7 +34,7 @@ Strategy 2: Less frequent deliveries of larger quantities (b)
 
 SS = 0
 
-![\bar d_1=\bar d_2](/images/Zyk-bar-d_1bar-d_2.png)
+$$ \bar d_1=\bar d_2 $$
 
 T~d1~ << T~d2~
 
@@ -68,7 +68,7 @@ EOQ - Economic Order Quantity
 
 Q~EOQ~ - optimal delivery quantity
 
-![\bg_white Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}}](/images/9N9-bg_white-q_eoqsqrtfrac2cdot-acdot-drcdot-v.gif)
+$$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}} $$
 
 
 The model offers the optimal amount to purchase under the specified conditions. At this quantity, the costs of fulfilling the order and costs of owning the stock together form a minimum amount.
@@ -81,7 +81,7 @@ The minimum cost point falls at such a supply quantity where the cost of applica
 
 For the EOQ model, there is an abbreviated formula for total logistics costs. With it, you do not need to calculate Q in advance. It shows the level of logistics costs that can be achieved if the economic quantity is ordered.
 
-![\bg_white TLC_{EOQ}=\sqrt{2\cdot A\cdot D\cdot r\cdot V}](/images/iBK-bg_white-tlc_eoqsqrt2cdot-acdot-dcdot-rcdot-v.gif)
+$$ TLC_{EOQ}=\sqrt{2\cdot A\cdot D\cdot r\cdot V} $$
 
 #### Limits.
 
@@ -114,7 +114,7 @@ Part of the stock may be consumed while the material itself is being replenished
 
 The model looks like this:
 
-![Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}\cdot(\frac{n}{n-m})}](/images/K2O-q_eoqsqrtfrac2cdot-acdot-drcdot-vcdotfracnn-m.gif)
+$$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}\cdot(\frac{n}{n-m})} $$
 
 n - rate of replenishment of the SMC stock
 
@@ -134,22 +134,20 @@ Let the threshold level of quantities at which he gives a discount be called*Q*~
 
 The same can be represented by a system of equations:
 
-![V = \begin{cases}
+$$ V = \begin{cases}
  & V_{0} \\ 
  & V_{0} (1-d) \interval
-\end{cases}
--{{git_url>https://github.com/IgorBG/SCM/blob/main/images/f2d-v--begincases--v_0---v_0-1-d-interval-endcases-.gif}}](/images/f2d-v--begincases--v_0---v_0-1-d-interval-endcases-.gif)
-![0 \leq Q \leq Q_{1} \\ 
-Q_{1} \leq Q
--{{git_url>https://github.com/IgorBG/SCM/blob/main/images/yC5-0-leq-q-leq-q_1--q_1-leq-q-.gif}}](/images/yC5-0-leq-q-leq-q_1--q_1-leq-q-.gif)
+\end{cases} $$
+$$ 0 \leq Q \leq Q_{1} \\ 
+Q_{1} \leq Q $$
 
 The reduced price will also reduce the cost of purchasing the material. To account for these costs in our formulas, they will look like this. At the base price level (below the discount threshold: 0<Q<Q~1~), the total costs are equal to:
 
-![TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r+D\cdot V_0](/images/HNX-tcfracdqcdot-afracq2cdot-v_0cdot-rdcdot-v_0.gif)
+$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r+D\cdot V_0 $$
 
 If the quantities exceed the requirements for taking the discount (Q~1~<Q<?), we adjust the price in the formula:
 
-![TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r+D\cdot V_0\cdot(1-d)](/images/AAy-tcfracdqcdot-afracq2cdot-v_0left1-drightcdot.gif)
+$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r+D\cdot V_0\cdot(1-d) $$
 
 As you can see here, we have added the third component - the total cost of the materials.
 
@@ -159,7 +157,7 @@ By comparing the total costs we can say for sure whether the discount is profita
 
 Step 1. We calculate Q~EOQ ~at a discounted price:
 
-![Q_{EOQ\left(disc\right)}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V_0\cdot\left(1-d\right)}}](/images/TMW-q_eoqleftdiscrightsqrtfrac2cdot-acdot-drcdot.gif)
+$$ Q_{EOQ\left(disc\right)}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V_0\cdot\left(1-d\right)}} $$
 
 Step 2. We compare the optimal amount with the amount required for a discount
 
@@ -171,11 +169,11 @@ Step 3. We compare the total costs with and without discount.
 
 We perform this step if Q~EOQ(disc)~ is below the discount level. Because of different potential levels of TMC, we should consider whether total costs would fall if we increased quantities to the discount level (Q~1~).
 
-![TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r+DV_0](/images/Zoo-tcfracdqcdot-afracq2cdot-v_0cdot-rdv_0.gif)
+$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r+DV_0 $$
 
 Where Q = Q~EOQ ~ at price without discounts, or Q = initially given agreed quantity (depending on the task)
 
-![TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r+DV_0\cdot(1-d)](/images/dVv-tcfracdqcdot-afracq2cdot-v_0left1-drightcdot.gif)
+$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r+DV_0\cdot(1-d) $$
 
 Where Q = Q~1~
 
@@ -193,7 +191,7 @@ An important point is the harmonization of indicators in the model. Thus, if the
 
 When consumption does not fluctuate very widely, one approach to dealing with variable demand is to ignore the variation and calculate supplies using the economic supply quantity.
 
-![Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{V\cdot r}}](/images/a08-q_eoqsqrtfrac2cdot-acdot-dvcdot-r.png)
+$$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{V\cdot r}} $$
 
 Working with the data for individual months we can use the average consumption and the monthly rate of cost of ownership. If we go into annual meters - we use total annual consumption and annual cost of ownership.
 
@@ -209,7 +207,7 @@ Having the number of deliveries per year, we can calculate the monthly periodici
 
 This adapted formula will give the same result:
 
-![T_{EOQ}=\sqrt{\frac{2\cdot A}{D \cdot V\cdot r}}](/images/88h-t_eoqsqrtfrac2cdot-ad-cdot-vcdot-r.png)
+$$ T_{EOQ}=\sqrt{\frac{2\cdot A}{D \cdot V\cdot r}} $$
 
 If you use the annual consumption figures and the annual cost of ownership in the formula - you will need to multiply the resulting value by 12 to get the monthly frequency.
 
@@ -243,9 +241,9 @@ LC~(1;2;...;n)~ = FC + HC~(1)~ + HC~(2)~ + ? + HC~(n)~
 
 Undoubtedly, the logistics costs covering 2 months (LC~(1;2)~) will be greater than the logistics costs covering only 1 month (LC~(1)~). But after dividing the combined delivery by the number of months - we get distributed logistics costs per month. If this spread out cost is smaller with more months included - we conclude that there is a benefit to increasing the scope of the batch.
 
-![\frac{LC_{(n)}}{n} >  \frac{LC_{(n+1)}}{n+1}](/images/0NK-fraclc_nn--fraclc_n1n1.png)
+$$ \frac{LC_{(n)}}{n} >  \frac{LC_{(n+1)}}{n+1} $$
 
-![\frac{LC_{(n)}}{n} <  \frac{LC_{(n+1)}}{n+1}](/images/D9E-fraclc_nn--fraclc_n1n1.png)
+$$ \frac{LC_{(n)}}{n} <  \frac{LC_{(n+1)}}{n+1} $$
 
 ### Lowest cost per unit of inventory
 
@@ -269,9 +267,9 @@ LC~(1;2;...;n)~ = FC + HC~(1)~ + HC~(2)~ + ? + HC~(n)~
 
 TQ~(1;2;...;n)~ = Q~(1)~ + Q~(2)~ + ? + Q~(n)~
 
-![\frac{LC_{(n)}}{TQ_{(n)}}>\frac{LC_{(n+1)}}{TQ_{(n+1)}}](/images/pTY-fraclc_ntq_nfraclc_n1tq_n1.png)
+$$ \frac{LC_{(n)}}{TQ_{(n)}}>\frac{LC_{(n+1)}}{TQ_{(n+1)}} $$
 
-![\frac{LC_{(n)}}{TQ_{(n)}}<\frac{LC_{(n+1)}}{TQ_{(n+1)}}](/images/gU2-fraclc_ntq_nfraclc_n1tq_n1.png)
+$$ \frac{LC_{(n)}}{TQ_{(n)}}<\frac{LC_{(n+1)}}{TQ_{(n+1)}} $$
 
 ### Balancing between fixed and variable costs
 
@@ -295,9 +293,9 @@ TFC~(1;2;...;n)~ = FC
 
 THC~(1;2;...;n)~ = HC~(1)~ + HC~(2)~ + ? +  HC~(n)~
 
-![TFC_n>THC_n](/images/E5m-tfc_nthc_n.png)
+$$ TFC_n>THC_n $$
 
-![TFC_n<THC_n](/images/Njf-tfc_nthc_n.png)
+$$ TFC_n<THC_n $$
 
 We appreciate how big the difference is between TFC and THC in the last 2 variants.
 
