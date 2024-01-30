@@ -136,13 +136,12 @@ Let the threshold level of quantities at which he gives a discount be called Q(1
 
 The same can be represented by a system of equations:
 
-$$ V = \begin{cases}
- & V_{0} \\ 
- & V_{0} (1-d)
-\end{cases} $$
-
-$$ 0 \leq Q \leq Q_{1} \\ 
-Q_{1} \leq Q $$
+$$
+V = \begin{cases}
+ & V_{0} \qquad \qquad 0 \leq Q \leq Q_{1} \\ 
+ & V_{0} (1-d) \qquad Q_{1} \leq Q
+\end{cases}
+$$
 
 The reduced price will also reduce the cost of purchasing the material. To account for these costs in our formulas, they will look like this. At the base price level (below the discount threshold: 0<Q<Q~1~), the total costs are equal to:
 
