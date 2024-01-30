@@ -221,7 +221,7 @@ Just the right amount is ordered for each period. In this way, the lowest cost o
 
 ### Balancing methods
 
-Explanation with a simple example: a bus ticket from city A to B costs BGN 10. A combo ticket is also available - one way + return. The passenger has the freedom to choose - to buy one combo ticket or to buy 2 separate tickets. At the price of a ticket-combo = BGN 20, both options are equally profitable. If the price of a ticket-combo = 18 BGN, the distributed or average price of one ticket is 9 BGN. In this case, it makes sense to buy a ticket-combo. If the price of a combo ticket = BGN 21 - it is more profitable to buy 2 separate tickets.
+Explanation with an abstract example: one-way ticket between cities A to B costs 10 EUR. A combo ticket is also available. The passenger can choose - to buy one combo ticket or to buy 2 separate tickets. At the price of a ticket-combo = 20 EUR, both options are equal in terms of costs. If the price of a combo-ticket = 18 EUR, the distributed price of one ticket would be 9 EUR. Here it makes sense to buy the combo-ticket. If the price of one combo ticket is 21 EUR - it is reasonable to buy 2 separate tickets.
 
 Another example: for a certain number of passengers, it may be advantageous to change different combinations of a car, minibus, bus, as well as combinations of several cars, or a combination of a minibus and a bus. Each combination can be valued and a decision made about its use for a specific number of passengers.
 
