@@ -130,14 +130,15 @@ The classic EOQ model cannot cover the task condition due to 2 features:
 
 - The model does not take into account the difference in the total cost of purchasing the materials with and without the discount
 
-Let the threshold level of quantities at which he gives a discount be called*Q*~1~. Then below this level the base price (without discount) will apply. Let's call her*IN*~0~. If we exceed the quantity*Q*~1~, the price*IN*~0~~ ~will be reduced by some discount (let it be*d*). A discounted price will be made up*IN*~0~**(*1*-d)*
+Let the threshold level of quantities at which he gives a discount be called Q(1). Then below this level the base price (without discount) will apply. Let's call her V(0). If we exceed the quantity Q(1), the price V(0) will be reduced by some discount (let it be _d_). A discounted price will be made up V0*(1-d)
 
 The same can be represented by a system of equations:
 
 $$ V = \begin{cases}
  & V_{0} \\ 
- & V_{0} (1-d) \interval
+ & V_{0} (1-d)
 \end{cases} $$
+
 $$ 0 \leq Q \leq Q_{1} \\ 
 Q_{1} \leq Q $$
 
