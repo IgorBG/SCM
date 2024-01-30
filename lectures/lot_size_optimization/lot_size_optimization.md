@@ -32,13 +32,13 @@ Strategy 1: More frequent deliveries of smaller quantities (a)
 
 Strategy 2: Less frequent deliveries of larger quantities (b)
 
-SS = 0
+$$ SS = 0 $$
 
 $$ \bar d_1=\bar d_2 $$
 
-T~d1~ << T~d2~
+$$ T_{d1} < T_{d2} $$
 
-Q~1~ << Q~2~
+$$ Q_1 < Q_2 $$
 
 
 
