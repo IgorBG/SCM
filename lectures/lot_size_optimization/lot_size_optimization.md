@@ -66,7 +66,7 @@ Also known as Wilson's formula. Shows quantity	of items in the lot, keeping logi
 
 EOQ - Economic Order Quantity
 
-Q~EOQ~ - optimal delivery quantity
+Q(EOQ) - optimal delivery quantity
 
 $$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}} $$
 
@@ -77,7 +77,7 @@ The model offers the optimal amount to purchase under the specified conditions. 
 
 The minimum cost point falls at such a supply quantity where the cost of application equals the cost of holding.
 
-**Total logistics costs at Q**~EOQ~**.** 
+**Total logistics costs at Q(EOQ).** 
 
 For the EOQ model, there is an abbreviated formula for total logistics costs. With it, you do not need to calculate Q in advance. It shows the level of logistics costs that can be achieved if the economic quantity is ordered.
 
@@ -161,9 +161,9 @@ $$ Q_{EOQ\left(disc\right)}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V_0\cdot\left(1-
 
 Step 2. We compare the optimal amount with the amount required for a discount
 
-Q~EOQ(disc) ~<=> Q~1~
+Q(EOQ(disc)) <=> Q(1)
 
-If Q~EOQ(disc) ~ exceeds the required level to receive a discount, so we should accept it.
+If Q(EOQ(disc)) ~ exceeds the required level to receive a discount, so we should accept it.
 
 Step 3. We compare the total costs with and without discount.
 
@@ -171,11 +171,11 @@ We perform this step if Q~EOQ(disc)~ is below the discount level. Because of dif
 
 $$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r+DV_0 $$
 
-Where Q = Q~EOQ ~ at price without discounts, or Q = initially given agreed quantity (depending on the task)
+Where Q = Q(EOQ) at price without discounts, or Q = initially given agreed quantity (depending on the task)
 
 $$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r+DV_0\cdot(1-d) $$
 
-Where Q = Q~1~
+Where Q = Q(1)
 
 ## Models for supply optimization under variable consumption
 
@@ -195,13 +195,15 @@ $$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{V\cdot r}} $$
 
 Working with the data for individual months we can use the average consumption and the monthly rate of cost of ownership. If we go into annual meters - we use total annual consumption and annual cost of ownership.
 
-After receiving Q~EOQ~ we follow the purchase plan. When the volume of planned consumption approaches the value of Q as much as possible~EOQ~, then a lot of that close quantity should be ordered.
+After receiving Q(EOQ) we follow the purchase plan. When the volume of planned consumption approaches the value of Q as much as possible EOQ, then a lot of that close quantity should be ordered.
 
 ### Economic delivery quantity expressed as order periods
 
 If the consumption has a high variation - deliveries will be carried out very irregularly. There are situations where the procurement department prioritizes the rhythmicity of deliveries.
 
-Using the economic quantity, we can work out how much supply per year we will have at that quantity - we divide the annual consumption by the economic quantity to supply: D/Q~EOQ~ 
+Using the economic quantity, we can work out how much supply per year we will have at that quantity - we divide the annual consumption by the economic quantity to supply: 
+
+$$ D/Q_{EOQ} $$ 
 
 Having the number of deliveries per year, we can calculate the monthly periodicity by dividing 12 months by the number of deliveries. You will get a result: how many months would economy deliveries take place.
 
@@ -229,17 +231,17 @@ Individual batches are combined into one delivery, while their total logistics c
 
 If we only deliver for one period:
 
-LC~(1)~ = FC + HC~(1)~
+$$ LC_{(1)} = FC + HC_{(1)} $$
 
 If the delivery includes periods 1 and 2:
 
-LC~(1;2)~ = FC + HC~(1)~ + HC~(2)~
+$$ LC_{(1;2)} = FC + HC_{(1)} + HC_{(2)} $$
 
 If the delivery includes n periods:
 
-LC~(1;2;...;n)~ = FC + HC~(1)~ + HC~(2)~ + ? + HC~(n)~
+$$ LC_{(1;2;...;n)} = FC + HC_{(1)} + HC_{(2)} + ... + HC_{(n)} $$
 
-Undoubtedly, the logistics costs covering 2 months (LC~(1;2)~) will be greater than the logistics costs covering only 1 month (LC~(1)~). But after dividing the combined delivery by the number of months - we get distributed logistics costs per month. If this spread out cost is smaller with more months included - we conclude that there is a benefit to increasing the scope of the batch.
+Undoubtedly, the logistics costs covering 2 months (LC(1;2)) will be greater than the logistics costs covering only 1 month (LC(1)). But after dividing the combined delivery by the number of months - we get distributed logistics costs per month. If this spread out cost is smaller with more months included - we conclude that there is a benefit to increasing the scope of the batch.
 
 $$ \frac{LC_{(n)}}{n} >  \frac{LC_{(n+1)}}{n+1} $$
 
@@ -251,21 +253,21 @@ The logic for calculating logistics costs is the same as for lowest costs. The d
 
 If we only deliver for one period:
 
-LC~(1)~ = FC + HC~(1)~
+$$ LC_{(1)} = FC + HC_{(1)} $$
 
-TQ~(1)~ = Q~(1)~
+$$ TQ_{(1)} = Q_{(1)} $$
 
 If the delivery includes periods 1 and 2:
 
-LC~(1;2)~ = FC + HC~(1)~ + HC~(2)~
+$$ LC_{(1;2)} = FC + HC_{(1)} + HC_{(2)} $$
 
-TQ~(1;2)~ = Q~(1)~ + Q~(2)~
+$$ TQ_{(1;2)} = Q_{(1)} + Q_{(2)} $$
 
 If the delivery includes n periods:
 
-LC~(1;2;...;n)~ = FC + HC~(1)~ + HC~(2)~ + ? + HC~(n)~
+$$ LC_{(1;2;...;n)} = FC + HC_{(1)} + HC_{(2)} + ... + HC_{(n)} $$
 
-TQ~(1;2;...;n)~ = Q~(1)~ + Q~(2)~ + ? + Q~(n)~
+$$ TQ_{(1;2;...;n)} = Q_{(1)} + Q_{(2)} + ... + Q_{(n)} $$
 
 $$ \frac{LC_{(n)}}{TQ_{(n)}}>\frac{LC_{(n+1)}}{TQ_{(n+1)}} $$
 
@@ -277,25 +279,25 @@ The main criterion used in this model is to choose the number of periods covered
 
 If we only deliver for one period:
 
-TFC~(1)~ = FC
+$$ TFC_{(1)} = FC $$
 
-THC~(1)~ = HC~(1)~
+$$ THC_{(1)} = HC_{(1)} $$
 
 If the delivery includes periods 1 and 2:
 
-TFC~(1;2)~ = FC
+$$ TFC_{(1;2)} = FC $$
 
-THC~(1;2)~ = HC~(1)~ + HC~(2)~
+$$ THC_{(1;2)} = HC_{(1)} + HC_{(2)} $$
 
 If the delivery includes n periods:
 
-TFC~(1;2;...;n)~ = FC
+$$ TFC_{(1;2;...;n)} = FC $$
 
-THC~(1;2;...;n)~ = HC~(1)~ + HC~(2)~ + ? +  HC~(n)~
+$$ THC_{(1;2;...;n)} = HC_{(1)} + HC_{(2)} + ... +  HC_{(n)} $$
 
-$$ TFC_n>THC_n $$
+$$ TFC_n > THC_n $$
 
-$$ TFC_n<THC_n $$
+$$ TFC_n < THC_n $$
 
 We appreciate how big the difference is between TFC and THC in the last 2 variants.
 
