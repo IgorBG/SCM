@@ -73,7 +73,7 @@ $$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}} $$
 
 The model offers the optimal amount to purchase under the specified conditions. At this quantity, the costs of fulfilling the order and costs of owning the stock together form a minimum amount.
 
-![](/images/scm_tlc_at_eoq_eng.png)
+![](images/scm_tlc_at_eoq_eng.png)
 
 The minimum cost point falls at such a supply quantity where the cost of application equals the cost of holding.
 
