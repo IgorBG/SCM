@@ -70,6 +70,7 @@ Q(EOQ) - optimal delivery quantity
 
 $$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}} $$
 
+![](images/scm_eoq_purchase_tempo.png)
 
 The model offers the optimal amount to purchase under the specified conditions. At this quantity, the costs of fulfilling the order and costs of owning the stock together form a minimum amount.
 
