@@ -101,7 +101,7 @@ The classical model makes many assumptions to offer a simple solution. In practi
 
 - Cost of ownership can vary greatly and given some other conditions
 
-- The consumption of SMC is usually variable in nature
+- The consumption of SKU is usually variable in nature
 
 - Does not take into account the warranty stock (although it does not affect the size of the economic delivery quantity)
 
@@ -111,14 +111,15 @@ For these and other reasons, numerous modifications of the EOQ model exist. They
 
 Part of the stock may be consumed while the material itself is being replenished in the warehouse. Under these conditions, it is necessary to adjust the order quantities so that after replenishing the stock and partially withdrawing it for production needs, sufficient quantities remain to cover the upcoming consumption.
 
+![](images/scm_eoq_with_slow_refill.png)
 
 The model looks like this:
 
 $$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}\cdot(\frac{n}{n-m})} $$
 
-n - rate of replenishment of the SMC stock
+n - SKU production volume within the period
 
-m - rate of consumption of the stock
+m - SKU consumption volume within the period
 
 ### Optimum quantity model with discounts available for larger quantities
 
