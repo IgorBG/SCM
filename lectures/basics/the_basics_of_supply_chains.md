@@ -8,7 +8,7 @@ Main objectives:
 Keywords: supply chain profitability, supply chain elements, supply chain decisions, supply chain processes
 
 ## Introduction, aim and objectives of the course
-*"Supply chain management is a set of approaches used to effectively integrate suppliers, manufacturers, processing centers, and warehouses so that these goods are produced and delivered in precise quantities at optimal places and times to minimize system-wide costs and to ensure service level requirements are met.*” David Simchi-Levi, 2003
+*"Supply chain management is a set of approaches utilized to effectively integrate suppliers, manufacturers, warehouses, and stores, so that merchandise is produced and destributed at the right quantities, to the right locations, and at the right time, in order to minimize systemwide costs while satisfying service level requirements.*” David Simchi-Levi, 2003
 
 Supply chains consist of all organizations involved directly or indirectly in fulfilling the requirements of end customers. A supply chain does not only consist of a manufacturer and a supplier, but also includes organizations involved in transportation, warehousing, retailing, as well as the customers themselves. Within any organization—for example, a manufacturer—the supply chain includes all functions involved in fulfilling customer orders. These include new product development, marketing, manufacturing, distribution, finance and customer service.
 In a supply chain, a manufacturer receives materials from several different suppliers and in turn supplies finished products to various distributors. Most supply chains are actually supply networks, an example diagram is shown in the following figure:
@@ -19,42 +19,44 @@ In a supply chain, a manufacturer receives materials from several different supp
 ### Main tasks
 Supply chain management focuses on automation and optimization of logistics operations throughout the product life cycle, performing the following tasks and functions:
 * Supplier relationship management - search for suitable suppliers, evaluation, procurement, cost management;
-* Management of relationships with distributors - design, construction of distribution channels, control over fulfillment of requests;
-* Warehousing - stock control, rules for storing goods (often called SKUs or stock-keeping units, "names kept in stock");
-* Forecasting - of the consumption of materials and consumables, of production demand, preparation of requests for purchases and production;
-* Pricing - accurate assessment of logistics costs, assessment of added value
-* Distribution - selection and distribution of means of transport and routes, positioning of warehouses, workshops;
-* Optimization - reduction of logistics costs (transportation, storage), acceleration of logistics processes;
-* Integration - analysis of internal and external material and information flows, research into the possibilities of combining efforts with partners.
+* Distributors Relationships Management - design and construction of distribution channels, control over the quotation processing;
+* Warehousing - stock control, rules for storing goods (often called stock-keeping units (SKU) / products / articles);
+* Forecasting - consumption modelling for materials and consumables, modelling of production demand, used for purchases and production planning;
+* Pricing - accurate assessment of logistics costs, assessment of added value;
+* Distribution - compariing transport means and routes options, warehouse positioning;
+* Optimization - reduction of logistics costs (transportation, storage), improving of logistics processes;
+* Integration - flow analysis (internal and external material and information flows), research into the possibilities of combining efforts with partners.
+
+![](images/scm_logistics_web.png)
 
 *Figure 3. Complex integration of the elements in the supply chains*
 
 Key drivers of supply chain performance.
-* Facilities - warehouses, workshops, terminals
-* Stocks - finished products, blanks, materials, consumables
-* Transport - roads, vehicles, transport schemes
-* Information - documentation, databases and knowledge bases, methods for analysis and decision-making, ready-made software products
-* Pricing - Cost Analysis
-* Procurement - supplier relationships, inventory control, supply optimization
+* Facilities - warehouses, workshops, terminals;
+* Stocks - finished products, blanks, materials, consumables;
+* Transport - roads, vehicles, transport routes;
+* Information - documentation, databases and knowledge bases, methods for analysis and decision-making, software tools;
+* Pricing - Cost Analysis;
+* Procurement - vendor relationships, inventory control, supply optimization;
 
 ## Efficiency of supply chains
 MDV - effective integration of resource providers, production, warehouses, stores so that manufactured goods are delivered to end users with minimal costs of the entire system and satisfies customer needs and requirements.
 
 Table 1. Six Target Indicators for Evaluating Supply Chain Performance
-| Pointer | Purpose (to be delivered...) | Indicators | 
+|  | Purpose (to be delivered...) | Indicators | 
 | --- | --- | --- |
-| Product | the required product | nomenclature scope, specific products, product customization | 
-| Quantity | quantity required | indicators of availability, level of service, possibility of wholesale and retail supplies | 
-| Quality | with an established level of quality | certificates, integrated quality control systems | 
+| Product | the right product | nomenclature scope, specific products, product customization | 
+| Quantity | the right quantity | indicators of availability, level of service, possibility of wholesale and retail supplies | 
+| Quality | the right level of quality | certificates, integrated quality control systems | 
 | Place | in the right place | territorial scope, positioning, exclusive access to the strategic resource | 
 | Time | at the right time | delivery frequency, response time | 
 | Expenses | with minimal costs | total costs, distribution of costs in the chain | 
 
-### Product:
-* Assortment (how many SKUs it manages)
-* Variety (how many types of products it manages - with different requirements)
-* What special characteristics do the products have (expiry date, dangerous, valuable, ...)
-* Relationships between products (kits, ecosystem)
+### Products:
+* Range of products (how many SKUs it manages)
+* Variety (how many types of products we manage - with different requirements)
+* Products with special characteristics / requirements (expiry date, dangerous, valuable, ...)
+* Links between products (kits, ecosystem)
 * Coverage of complex needs (the limits of the spectrum of services)
 * Uniqueness of each item - customization - mass production
 * Product/assortment renewal cycle
