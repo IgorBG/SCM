@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>the_basics_of_supply_chains.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="the-basics-of-supply-chains">The basics of supply chains</h1>
+<p>Versions: text - <a href="https://docs.google.com/document/d/1hrMALYhcYkFCPh2f6sow9qVebdjmW94UtoQs0hHgEIk/export?format=pdf">pdf</a>  <a href="https://docs.google.com/document/d/e/2PACX-1vRejwtoNfAjTSonmnHvp6Ed_57n0xstdjC-gV3oN6Z2qruNBrJ5O4J8nnTZulpCn6C-1TLq5mdWtYGJ/pub">html</a>  <a href="https://github.com/IgorBG/SCM/blob/main/lectures/basics/the_basics_of_supply_chains.md">source</a></p>
+<p>Main objectives:</p>
+<ul>
+<li>Understanding supply chain objectives and the impact of supply chain decisions on the business results;</li>
+<li>Identifying the main phases of decision-making inside supply chains. Clear out the importance of each phase;</li>
+<li>Identifying the main processes and groups of processes in supply chains.
+Keywords: supply chain profitability, supply chain elements, supply chain decisions, supply chain processes</li>
+</ul>
+<h2 id="introduction-aim-and-objectives-of-the-course">Introduction, aim and objectives of the course</h2>
+<p><em>&quot;Supply chain management is a set of approaches utilized to effectively integrate suppliers, manufacturers, warehouses, and stores, so that merchandise is produced and destributed at the right quantities, to the right locations, and at the right time, in order to minimize systemwide costs while satisfying service level requirements.</em>” David Simchi-Levi, 2003</p>
+<p>Supply chains consist of all organizations involved directly or indirectly in fulfilling the requirements of end customers. A supply chain does not only consist of a manufacturer and a supplier, but also includes organizations involved in transportation, warehousing, retailing, as well as the customers themselves. Within any organization—for example, a manufacturer—the supply chain includes all functions involved in fulfilling customer orders. These include new product development, marketing, manufacturing, distribution, finance and customer service.
+In a supply chain, a manufacturer receives materials from several different suppliers and in turn supplies finished products to various distributors. Most supply chains are actually supply networks, an example diagram is shown in the following figure:</p>
+<p><img src="images/scm_structure_eng.png" alt="">
+<em>Figure 2. A simple supply chain structure</em></p>
+<h3 id="main-tasks">Main tasks</h3>
+<p>Supply chain management focuses on automation and optimization of logistics operations throughout the product life cycle, performing the following tasks and functions:</p>
+<ul>
+<li>Supplier relationship management - search for suitable suppliers, evaluation, procurement, cost management;</li>
+<li>Distributors Relationships Management - design and construction of distribution channels, control over the quotation processing;</li>
+<li>Warehousing - stock control, rules for storing goods (often called stock-keeping units (SKU) / products / articles);</li>
+<li>Forecasting - consumption modelling for materials and consumables, modelling of production demand, used for purchases and production planning;</li>
+<li>Pricing - accurate assessment of logistics costs, assessment of added value;</li>
+<li>Distribution - compariing transport means and routes options, warehouse positioning;</li>
+<li>Optimization - reduction of logistics costs (transportation, storage), improving of logistics processes;</li>
+<li>Integration - flow analysis (internal and external material and information flows), research into the possibilities of combining efforts with partners.</li>
+</ul>
+<p><img src="images/scm_logistics_web.png" alt=""></p>
+<p><em>Figure 3. Complex integration of the elements in the supply chains</em></p>
+<p>Key drivers of supply chain performance.</p>
+<ul>
+<li>Facilities - warehouses, workshops, terminals;</li>
+<li>Stocks - finished products, blanks, materials, consumables;</li>
+<li>Transport - roads, vehicles, transport routes;</li>
+<li>Information - documentation, databases and knowledge bases, methods for analysis and decision-making, software tools;</li>
+<li>Pricing - Cost Analysis;</li>
+<li>Procurement - vendor relationships, inventory control, supply optimization;</li>
+</ul>
+<h2 id="efficiency-of-supply-chains">Efficiency of supply chains</h2>
+<p>SCM - effective integration of resource providers, production, warehouses, stores so that manufactured goods are delivered to end users with minimal costs of the entire system and satisfies customer needs and requirements.</p>
+<p>Table 1. Six Target Indicators for Evaluating Supply Chain Performance</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Purpose (to be delivered...)</th>
+<th>Indicators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product</td>
+<td>the right product</td>
+<td>nomenclature scope, specific products, product customization</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>the right quantity</td>
+<td>indicators of availability, level of service, possibility of wholesale and retail supplies</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>the right level of quality</td>
+<td>certificates, integrated quality control systems</td>
+</tr>
+<tr>
+<td>Place</td>
+<td>in the right place</td>
+<td>territorial scope, positioning, exclusive access to the strategic resource</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>at the right time</td>
+<td>delivery frequency, response time</td>
+</tr>
+<tr>
+<td>Expenses</td>
+<td>with minimal costs</td>
+<td>total costs, distribution of costs in the chain</td>
+</tr>
+</tbody>
+</table>
+<h3 id="products">Products:</h3>
+<ul>
+<li>Range of products (how many SKUs it manages)</li>
+<li>Variety (how many different SKU types it manages)</li>
+<li>Products with special characteristics / requirements (short expiry date, dangerous, valuable, ...)</li>
+<li>Links between products (kits, ecosystem)</li>
+<li>Coverage of complex needs (the limits of the spectrum of services)</li>
+<li>Uniqueness of each item - customization - mass production</li>
+<li>Product/assortment renewal cycle</li>
+</ul>
+<h3 id="quantity">Quantity:</h3>
+<ul>
+<li>Capacity (how many customers we can serve)</li>
+<li>Flexibility (no minimum order quantities)</li>
+</ul>
+<h3 id="quality">Quality:</h3>
+<ul>
+<li>Quality certificates</li>
+<li>Stability of quality</li>
+<li>Service quality</li>
+</ul>
+<h3 id="place">Place:</h3>
+<ul>
+<li>Number of commercial establishments in the country</li>
+<li>Dislocation in key locations</li>
+<li>Average distance to object</li>
+</ul>
+<h3 id="time">Time:</h3>
+<ul>
+<li>Delivery/Service Time</li>
+<li>Time management of inquiries</li>
+<li>Frequency and rhythmicity of deliveries</li>
+</ul>
+<h3 id="cost">Cost:</h3>
+<ul>
+<li>Price range</li>
+<li>Price stability</li>
+<li>Payment terms</li>
+</ul>
+<h3 id="example">Example:</h3>
+<p>Compare the efficiency of the following circuits (Ikea and Jysk):</p>
+<p><img src="images/ikea_logo_320pxw.png" alt="Ikea">
+<img src="images/jysk_logo_320pxw.png" alt="Jusk"></p>
+<p>Image sources: IKEA - <a href="https://en.m.wikipedia.org/wiki/File:Ikea_logo.svg">https://en.m.wikipedia.org/wiki/file:Ikea_logo.svg</a>;
+Jysk - <a href="https://en.m.wikipedia.org/wiki/File:Jysk_logo.svg">https://en.m.wikipedia.org/wiki/File:Jysk_logo.svg</a>;</p>
+<h2 id="conflicts-of-interests-between-the-participants-in-the-sc">Conflicts of interests between the participants in the SC</h2>
+<p>Partners may have conflicting interests that place their relationships in a competitive context. Their interrelationships are complex because their purpose must involve finding the appropriate balance between competition and cooperation. Through their connectivity, the members of the chain create conditions for each of them to concentrate on increasing the value for the end customer and reducing the time and costs of its creation.</p>
+<h2 id="information-system-and-coordination-of-material-flows-in-a-logistics-chain">Information system and coordination of material flows in a logistics chain</h2>
+<p>A logistics chain (LC) is a group of business entities linked by commercial contracts for joint activity with the aim of delivering goods and services to the end customer according to his requirements. The contract may be verbal. If there is no trade contract - no logistics chain - these are random transactions, not a logistics system.
+In this system of organizations, two levels are distinguished:</p>
+<ul>
+<li>exchange links between participants</li>
+<li>the production system in which resources are used and developed.
+Exchange relationships coordinate and direct activities in the production system where resources are used, combined and transformed into output. Due to the pooling of resources, coordination between actors is necessary to realize savings, but also to create innovative changes.</li>
+</ul>
+<p>Main Logistics Operations:</p>
+<ul>
+<li>Preparation of goods for transport and warehouse operations.</li>
+<li>Grouping, consolidation.</li>
+<li>Cargo and unloading activity</li>
+<li>Domestic transport activities
+Logistics services - forwarding, cargo insurance, customs service, building a distribution network and a network for the removal of waste products.</li>
+</ul>
+<h2 id="importance-of-supply-chains-for-the-bulgarian-economy">Importance of supply chains for the Bulgarian economy</h2>
+<p>Factors affecting the economy of Bulgaria in the context of the organization of delivery processes:</p>
+<ul>
+<li>In Bulgaria, low-value goods are sold on foreign markets (EU, USA) with relatively high transport costs.</li>
+<li>The price of raw materials is constantly rising.</li>
+<li>The price of energy carriers is constantly increasing</li>
+<li>Bulgarian markets for raw materials and goods are becoming more and more distant.</li>
+</ul>
+<h2 id="additional-reading">Additional reading:</h2>
+<ol>
+<li>M. Rakovska. Supply chain management - a factor for competitiveness. Railway transport magazine. (<em>М. Раковска. Управление на веригата на доставките - фактор за конкурентоспособността. Списание Железопътен транспорт</em> <a href="https://www.jptactis.com/Archives/jpt605/rakovska.htm">original</a>, <a href="https://docs.google.com/document/d/1zgWwAFSpffqATbABh2kdds_1YG7wT4wYWB3v-CZDmQM/preview">archive</a>)</li>
+<li>M. Rakovska. Theoretical aspects of supply chain management. 2009. Scientific works UNSS (<em>М. Раковска. Теоретични аспекти на управлението на веригата на доставките. 2009. Научни трудове УНСС</em> <a href="https://www.unwe.bg/uploads/ResearchPapers/Research%20Papers_vol2_2009_No6_M%20Rakovska.pdf">original</a>, <a href="https://drive.google.com/file/d/1OYRbHhzJSLpP5eelu6DzqpRBaElB50WI/view?usp=sharing">archive</a>)</li>
+</ol>
+
+</body>
+</html>

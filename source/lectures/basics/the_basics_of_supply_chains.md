@@ -54,8 +54,8 @@ Table 1. Six Target Indicators for Evaluating Supply Chain Performance
 
 ### Products:
 * Range of products (how many SKUs it manages)
-* Variety (how many types of products we manage - with different requirements)
-* Products with special characteristics / requirements (expiry date, dangerous, valuable, ...)
+* Variety (how many different SKU types it manages)
+* Products with special characteristics / requirements (short expiry date, dangerous, valuable, ...)
 * Links between products (kits, ecosystem)
 * Coverage of complex needs (the limits of the spectrum of services)
 * Uniqueness of each item - customization - mass production
