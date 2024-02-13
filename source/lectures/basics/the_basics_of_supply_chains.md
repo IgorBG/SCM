@@ -1,5 +1,5 @@
 # The basics of supply chains
-Versions: text - [pdf](https://docs.google.com/document/d/1hrMALYhcYkFCPh2f6sow9qVebdjmW94UtoQs0hHgEIk/export?format=pdf)  [html](https://docs.google.com/document/d/e/2PACX-1vRejwtoNfAjTSonmnHvp6Ed_57n0xstdjC-gV3oN6Z2qruNBrJ5O4J8nnTZulpCn6C-1TLq5mdWtYGJ/pub)  [source](https://github.com/IgorBG/SCM/blob/main/lectures/basics/the_basics_of_supply_chains.md)
+Versions: text - [pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/basics/the_basics_of_supply_chains.pdf)  [html](https://github.com/IgorBG/SCM/blob/main/source/lectures/basics/the_basics_of_supply_chains.html)  [source](https://github.com/IgorBG/SCM/blob/main/lectures/basics/the_basics_of_supply_chains.md)
 
 Main objectives:
 * Understanding supply chain objectives and the impact of supply chain decisions on the business results;
@@ -13,7 +13,7 @@ Keywords: supply chain profitability, supply chain elements, supply chain decisi
 Supply chains (SC) consist of all organizations involved directly or indirectly in fulfilling the requirements of end customers. A supply chain does not only consist of a manufacturer and a supplier, but also includes organizations involved in transportation, warehousing, retailing, as well as the customers themselves. Within any organization—for example, a manufacturer—the supply chain includes all functions involved in fulfilling customer orders. These include new product development, marketing, manufacturing, distribution, finance and customer service.
 In a supply chain, a manufacturer receives materials from several different suppliers and in turn supplies finished products to various distributors. Most supply chains are actually supply networks, an example diagram is shown in the following figure:
 
-![](images/scm_structure_eng.png)
+![](images/scm_structure_eng.svg)
 *Figure 2. A simple supply chain structure*
 
 ### Main tasks
@@ -27,7 +27,7 @@ Supply chain management (SCM) focuses on automation and optimization of logistic
 * Optimization - reduction of logistics costs (transportation, storage), improving of logistics processes;
 * Integration - flow analysis (internal and external material and information flows), research into the possibilities of combining efforts with partners.
 
-![](images/scm_logistics_web.png)
+![](images/scm_logistics_web.svg)
 
 *Figure 3. Complex integration of the elements in the supply chains*
 
