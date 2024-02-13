@@ -1,5 +1,5 @@
 # The basics of supply chains
-Versions: text - [pdf](https://docs.google.com/document/d/1hrMALYhcYkFCPh2f6sow9qVebdjmW94UtoQs0hHgEIk/export?format=pdf)  [html](https://docs.google.com/document/d/e/2PACX-1vRejwtoNfAjTSonmnHvp6Ed_57n0xstdjC-gV3oN6Z2qruNBrJ5O4J8nnTZulpCn6C-1TLq5mdWtYGJ/pub)  [gdoc](https://docs.google.com/document/d/1hrMALYhcYkFCPh2f6sow9qVebdjmW94UtoQs0hHgEIk/edit?usp=sharing)
+Versions: text - [pdf](https://docs.google.com/document/d/1hrMALYhcYkFCPh2f6sow9qVebdjmW94UtoQs0hHgEIk/export?format=pdf)  [html](https://docs.google.com/document/d/e/2PACX-1vRejwtoNfAjTSonmnHvp6Ed_57n0xstdjC-gV3oN6Z2qruNBrJ5O4J8nnTZulpCn6C-1TLq5mdWtYGJ/pub)  [source](https://github.com/IgorBG/SCM/blob/main/lectures/basics/the_basics_of_supply_chains.md)
 
 Main objectives:
 * Understanding supply chain objectives and the impact of supply chain decisions on the business results;
@@ -40,7 +40,7 @@ Key drivers of supply chain performance.
 * Procurement - vendor relationships, inventory control, supply optimization;
 
 ## Efficiency of supply chains
-MDV - effective integration of resource providers, production, warehouses, stores so that manufactured goods are delivered to end users with minimal costs of the entire system and satisfies customer needs and requirements.
+SCM - effective integration of resource providers, production, warehouses, stores so that manufactured goods are delivered to end users with minimal costs of the entire system and satisfies customer needs and requirements.
 
 Table 1. Six Target Indicators for Evaluating Supply Chain Performance
 |  | Purpose (to be delivered...) | Indicators | 
