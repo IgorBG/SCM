@@ -262,7 +262,7 @@ The task of IMS is to provide accurate information about stock in the warehouse.
 *Fig. 5. Example of prioritization of purchase orders - Replenishment monitor in SAP. Source: logiplus.de*
 
 ## Integration of the ROP toolkit into popular ERP systems
-SAP [Source:[https://help.sap.com/docs/](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/fe39e10a9a864a8f8dc9537704f0fa13/5697b6535fe6b74ce10000000a174cb4.html)]
+SAP Source: help.sap.com/docs/
 In reorder point planning, procurement is triggered when the sum of plant stock and firmed receipts falls below the reorder point .
 The following values are important for defining the reorder point:
 * Safety stock
@@ -274,12 +274,12 @@ The following values are important for defining the safety stock:
 * Service level to be achieved
 * Forecast error, that is, the deviation from the expected requirements
 
-Oracle Business Suite (Source:[https://docs.oracle.com/](https://docs.oracle.com/cd/A60725_05/html/comnls/us/inv/roplan.htm))
+Oracle Business Suite [https://docs.oracle.com/](https://docs.oracle.com/cd/A60725_05/html/comnls/us/inv/roplan.htm)
 Reorder point planning uses demand forecasts to decide when to order a new quantity to avoid dipping into safety stock. Reorder point planning suggests a new order for an item when the available quantity--on-hand quantity plus planned receipts--drops below the item's safety stock level plus forecast demand for the item during its replenishment lead time. The suggested order quantity is an economic order quantity that minimizes the total cost of ordering and carrying inventory. Oracle Inventory can automatically generate requisitions to inform your purchasing department that a replenishment order is required to supply your organization.
 Order lead time is the total of the item's processing, preprocessing, and postprocessing lead times.
 If the forecast is correct and the order arrives on time, the inventory level should be right at the safety stock level at the time of receipt. In cases where the desired safety stock level changes during the order lead time, Oracle Inventory uses the largest safety stock quantity during the lead time.
 
-Microsoft NAV (Source:[https://learn.microsoft.com/en-us/dynamics-nav-app/](https://learn.microsoft.com/en-us/dynamics-nav-app/design-details-the-role-of-the-reorder-point))
+Microsoft NAV [https://learn.microsoft.com/en-us/dynamics-nav-app/](https://learn.microsoft.com/en-us/dynamics-nav-app/design-details-the-role-of-the-reorder-point)
 The planning system will suggest a forward-scheduled supply order at the point when the projected inventory passes below the reorder point.
 The reorder point reflects a certain inventory level. However, inventory levels can move significantly during the time bucket and, therefore, the planning system must constantly monitor the projected available inventory.
 

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lot_size_optimization.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="lot-size-decisions-in-supply-planning-the-economic-quantity-of-the-supply">Lot size decisions in supply planning. The economic quantity of the supply.</h1>
+<p>Versions: text -<a href="https://docs.google.com/document/d/1az90FFb5EYhQkwfV2kw4Z-aIxCNdjH5SEi3CSvqcO0E/export?format=pdf">pdf</a>, <a href="https://docs.google.com/document/d/e/2PACX-1vReKWX9PcmRzH4HS75W0Sz5WuymGkynYmSIMee9UGVVx4N9vLT-_1Ar00Y15a6aN8z5A_oO2FPpswLb/pub">html</a>, <a href="https://docs.google.com/document/d/1az90FFb5EYhQkwfV2kw4Z-aIxCNdjH5SEi3CSvqcO0E/view">gdoc</a></p>
+<p>Model for the economic quantity to supply. Least Cost Per Period Model</p>
+<p>Keywords: logistics costs, economic delivery quantity</p>
+<p>The supply department ensures not only the timely provision of the business processes of an organization with the necessary commodity and material values. It also tries to optimize deliveries so that the enterprise incurs the smallest possible logistics costs. There are numerous activities that can reduce overall logistics costs. Here are a few of them:</p>
+<p>a) combining deliveries and lots to optimize transport costs,</p>
+<p>b) increasing the volume of the order to obtain discounts from manufacturers,</p>
+<p>c) reduction of delivery volume to optimize warehouse costs,</p>
+<p>d) &quot;stratification&quot; of supplies between several suppliers,</p>
+<p>e) teaming up with other players for joint supplies,</p>
+<p>e) others.</p>
+<h2 id="buying-strategies">Buying strategies</h2>
+<p>2 main strategies are used to solve the task of quantities and frequency of purchase:</p>
+<p>Fig. 1. Small (a) and large (b) batch replenishment strategy</p>
+<p>Strategy 1: More frequent deliveries of smaller quantities (a)</p>
+<p>Strategy 2: Less frequent deliveries of larger quantities (b)</p>
+<p>$$ SS = 0 $$</p>
+<p>$$ \bar d_1=\bar d_2 $$</p>
+<p>$$ T_{d1} &lt; T_{d2} $$</p>
+<p>$$ Q_1 &lt; Q_2 $$</p>
+<p>The advantages of Strategy 1:</p>
+<ul>
+<li>
+<p>Less funds are required to purchase and maintain inventory</p>
+</li>
+<li>
+<p>Less investment to build storage capacity</p>
+</li>
+</ul>
+<p>Disadvantages of Strategy 1:</p>
+<ul>
+<li>
+<p>Higher costs are required to manage, organize supplies</p>
+</li>
+<li>
+<p>Difficulties in negotiating small-volume, more frequent deliveries at attractive prices</p>
+</li>
+<li>
+<p>Higher cost of transporting the stock</p>
+</li>
+<li>
+<p>Greater uncertainty of the process, due to the short reaction time.</p>
+</li>
+</ul>
+<h2 id="models-for-supply-optimization-under-variable-consumption">Models for supply optimization under variable consumption.</h2>
+<h3 id="economic-order-quantity-eoq-model">Economic Order Quantity (EOQ) Model</h3>
+<p>Also known as Wilson's formula. Shows quantity	of items in the lot, keeping logistics costs to a minimum.</p>
+<p>EOQ - Economic Order Quantity</p>
+<p>Q(EOQ) - optimal delivery quantity</p>
+<p>$$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}} $$</p>
+<p><img src="images/scm_eoq_purchase_tempo.png" alt=""></p>
+<p>The model offers the optimal amount to purchase under the specified conditions. At this quantity, the costs of fulfilling the order and costs of owning the stock together form a minimum amount.</p>
+<p><img src="images/scm_tlc_at_eoq_eng.png" alt=""></p>
+<p>The minimum cost point falls at such a supply quantity where the cost of application equals the cost of holding.</p>
+<p><strong>Total logistics costs at Q(EOQ).</strong></p>
+<p>For the EOQ model, there is an abbreviated formula for total logistics costs. With it, you do not need to calculate Q in advance. It shows the level of logistics costs that can be achieved if the economic quantity is ordered.</p>
+<p>$$ TLC_{EOQ}=\sqrt{2\cdot A\cdot D\cdot r\cdot V} $$</p>
+<h4 id="limits">Limits.</h4>
+<p>The classical model makes many assumptions to offer a simple solution. In practice, most parameters are not constant and have complex dependencies. For example:</p>
+<ul>
+<li>
+<p>The price depends on the ordered quantities</p>
+</li>
+<li>
+<p>Fixed costs cease to be fixed when a change in quantities is significant</p>
+</li>
+<li>
+<p>Other fixed delivery costs apply when changing supplier</p>
+</li>
+<li>
+<p>The enterprise may use a combination of the delivery methods for the same item within one delivery</p>
+</li>
+<li>
+<p>A delivery can be made in even smaller portions</p>
+</li>
+<li>
+<p>The delivery may be a combination of the goods ordered</p>
+</li>
+<li>
+<p>Cost of ownership can vary greatly and given some other conditions</p>
+</li>
+<li>
+<p>The consumption of SKU is usually variable in nature</p>
+</li>
+<li>
+<p>Does not take into account the warranty stock (although it does not affect the size of the economic delivery quantity)</p>
+</li>
+</ul>
+<p>For these and other reasons, numerous modifications of the EOQ model exist. They overcome individual limitations and expand the spheres of its application.</p>
+<h3 id="incremental-replenishment-model">Incremental replenishment model</h3>
+<p>Part of the stock may be consumed while the material itself is being replenished in the warehouse. Under these conditions, it is necessary to adjust the order quantities so that after replenishing the stock and partially withdrawing it for production needs, sufficient quantities remain to cover the upcoming consumption.</p>
+<p><img src="images/scm_eoq_with_slow_refill.png" alt=""></p>
+<p>The model looks like this:</p>
+<p>$$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V}\cdot(\frac{n}{n-m})} $$</p>
+<p>n - SKU production volume within the period</p>
+<p>m - SKU consumption volume within the period</p>
+<h3 id="optimum-quantity-model-with-discounts-available-for-larger-quantities">Optimum quantity model with discounts available for larger quantities</h3>
+<p>Often suppliers offer significant discounts off the regular price if we order over a certain quantity. A procurement specialist must decide whether to order more and take a discount, or to give up. A supplier may offer many price tiers. Purchasing the larger quantity will reduce fixed costs per unit of output, but will increase holding costs. In some cases, the increased cost of ownership of the larger volume of production may outweigh the benefit of the discount. In the previous models, we ignored the cost of purchasing the material itself. There, within the considered period, we buy the same amount of materials at the same price. That's why<em>TMC</em> had no impact on total costs. In this case*TMC *it will be different because the price changes because of the discount.</p>
+<p>The classic EOQ model cannot cover the task condition due to 2 features:</p>
+<ul>
+<li>
+<p>We have 2 different prices that change when crossing a certain threshold.</p>
+</li>
+<li>
+<p>The model does not take into account the difference in the total cost of purchasing the materials with and without the discount</p>
+</li>
+</ul>
+<p>Let the threshold level of quantities at which he gives a discount be called Q(1). Then below this level the base price (without discount) will apply. Let's call her V(0). If we exceed the quantity Q(1), the price V(0) will be reduced by some discount (let it be <em>d</em>). A discounted price will be made up V0*(1-d)</p>
+<p>The same can be represented by a system of equations:</p>
+<p>$$
+V = \begin{cases}
+&amp; V_{0} \qquad \qquad 0 \leq Q \leq Q_{1} \
+&amp; V_{0} (1-d) \qquad Q_{1} \leq Q
+\end{cases}
+$$</p>
+<p>The reduced price will also reduce the cost of purchasing the material. To account for these costs in our formulas, they will look like this. At the base price level (below the discount threshold: 0&lt;Q&lt;Q~1~), the total costs are equal to:</p>
+<p>$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r+D\cdot V_0 $$</p>
+<p>If the quantities exceed the requirements for taking the discount (Q~1~&lt;Q&lt;?), we adjust the price in the formula:</p>
+<p>$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r+D\cdot V_0\cdot(1-d) $$</p>
+<p>As you can see here, we have added the third component - the total cost of the materials.</p>
+<h4 id="algorithm-for-solving-the-task-of-accepting-or-rejecting-a-discount-offer">Algorithm for solving the task of accepting or rejecting a discount offer:</h4>
+<p>By comparing the total costs we can say for sure whether the discount is profitable and, respectively, whether we should change the purchase plan.</p>
+<p>Step 1. We calculate Q~EOQ ~at a discounted price:</p>
+<p>$$ Q_{EOQ\left(disc\right)}=\sqrt{\frac{2\cdot A\cdot D}{r\cdot V_0\cdot\left(1-d\right)}} $$</p>
+<p>Step 2. We compare the optimal amount with the amount required for a discount</p>
+<p>Q(EOQ(disc)) &lt;=&gt; Q(1)</p>
+<p>If Q(EOQ(disc)) ~ exceeds the required level to receive a discount, so we should accept it.</p>
+<p>Step 3. We compare the total costs with and without discount.</p>
+<p>We perform this step if Q~EOQ(disc)~ is below the discount level. Because of different potential levels of TMC, we should consider whether total costs would fall if we increased quantities to the discount level (Q~1~).</p>
+<p>$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\cdot r+DV_0 $$</p>
+<p>Where Q = Q(EOQ) at price without discounts, or Q = initially given agreed quantity (depending on the task)</p>
+<p>$$ TC=\frac{D}{Q}\cdot A+\frac{Q}{2}\cdot V_0\left(1-d\right)\cdot r+DV_0\cdot(1-d) $$</p>
+<p>Where Q = Q(1)</p>
+<h2 id="models-for-supply-optimization-under-variable-consumption">Models for supply optimization under variable consumption</h2>
+<p>In practice, 2 approaches are used to determine the order for variable consumption:</p>
+<ul>
+<li>
+<p>Adapted Economic Order Quantity (EOQ) variants</p>
+</li>
+<li>
+<p>Balancing methods</p>
+</li>
+</ul>
+<p>An important point is the harmonization of indicators in the model. Thus, if the monthly or average monthly consumption indicators are used in the model - then the ownership cost rate must be on a monthly basis. If we use annual in the models</p>
+<h3 id="average-level-of-the-economic-supply-quantity">Average level of the economic supply quantity</h3>
+<p>When consumption does not fluctuate very widely, one approach to dealing with variable demand is to ignore the variation and calculate supplies using the economic supply quantity.</p>
+<p>$$ Q_{EOQ}=\sqrt{\frac{2\cdot A\cdot D}{V\cdot r}} $$</p>
+<p>Working with the data for individual months we can use the average consumption and the monthly rate of cost of ownership. If we go into annual meters - we use total annual consumption and annual cost of ownership.</p>
+<p>After receiving Q(EOQ) we follow the purchase plan. When the volume of planned consumption approaches the value of Q as much as possible EOQ, then a lot of that close quantity should be ordered.</p>
+<h3 id="economic-delivery-quantity-expressed-as-order-periods">Economic delivery quantity expressed as order periods</h3>
+<p>If the consumption has a high variation - deliveries will be carried out very irregularly. There are situations where the procurement department prioritizes the rhythmicity of deliveries.</p>
+<p>Using the economic quantity, we can work out how much supply per year we will have at that quantity - we divide the annual consumption by the economic quantity to supply:</p>
+<p>$$ D/Q_{EOQ} $$</p>
+<p>Having the number of deliveries per year, we can calculate the monthly periodicity by dividing 12 months by the number of deliveries. You will get a result: how many months would economy deliveries take place.</p>
+<p>This adapted formula will give the same result:</p>
+<p>$$ T_{EOQ}=\sqrt{\frac{2\cdot A}{D \cdot V\cdot r}} $$</p>
+<p>If you use the annual consumption figures and the annual cost of ownership in the formula - you will need to multiply the resulting value by 12 to get the monthly frequency.</p>
+<h3 id="batch-by-batch">Batch by batch</h3>
+<p>Just the right amount is ordered for each period. In this way, the lowest cost of inventory ownership is achieved. This approach is not appropriate when ordering costs are high.</p>
+<h3 id="balancing-methods">Balancing methods</h3>
+<p>Explanation with an abstract example: one-way ticket between cities A to B costs 10 EUR. A combo ticket is also available. The passenger can choose - to buy one combo ticket or to buy 2 separate tickets. At the price of a ticket-combo = 20 EUR, both options are equal in terms of costs. If the price of a combo-ticket = 18 EUR, the distributed price of one ticket would be 9 EUR. Here it makes sense to buy the combo-ticket. If the price of one combo ticket is 21 EUR - it is reasonable to buy 2 separate tickets.</p>
+<p>Another example: for a certain number of passengers, it may be advantageous to change different combinations of a car, minibus, bus, as well as combinations of several cars, or a combination of a minibus and a bus. Each combination can be valued and a decision made about its use for a specific number of passengers.</p>
+<p>The idea of ??this class of methods is to compare the costs of two alternatives (to aggregate the lot or to deliver separately). The alternatives can be compared according to different characteristics - cost per period, cost per number, the balance of the two main components of logistics costs. This iterative comparison makes these methods suitable for supply optimization. Below we will look at 3 types of balancing methods.</p>
+<h3 id="lowest-period-costs">Lowest period costs</h3>
+<p>Individual batches are combined into one delivery, while their total logistics costs, distributed per unit of time, decrease.</p>
+<p>If we only deliver for one period:</p>
+<p>$$ LC_{(1)} = FC + HC_{(1)} $$</p>
+<p>If the delivery includes periods 1 and 2:</p>
+<p>$$ LC_{(1;2)} = FC + HC_{(1)} + HC_{(2)} $$</p>
+<p>If the delivery includes n periods:</p>
+<p>$$ LC_{(1;2;...;n)} = FC + HC_{(1)} + HC_{(2)} + ... + HC_{(n)} $$</p>
+<p>Undoubtedly, the logistics costs covering 2 months (LC(1;2)) will be greater than the logistics costs covering only 1 month (LC(1)). But after dividing the combined delivery by the number of months - we get distributed logistics costs per month. If this spread out cost is smaller with more months included - we conclude that there is a benefit to increasing the scope of the batch.</p>
+<p>$$ \frac{LC_{(n)}}{n} &gt;  \frac{LC_{(n+1)}}{n+1} $$</p>
+<p>$$ \frac{LC_{(n)}}{n} &lt;  \frac{LC_{(n+1)}}{n+1} $$</p>
+<h3 id="lowest-cost-per-unit-of-inventory">Lowest cost per unit of inventory</h3>
+<p>The logic for calculating logistics costs is the same as for lowest costs. The difference is that here the order periods are summed up to the point at which the cost per unit of inventory starts to rise.</p>
+<p>If we only deliver for one period:</p>
+<p>$$ LC_{(1)} = FC + HC_{(1)} $$</p>
+<p>$$ TQ_{(1)} = Q_{(1)} $$</p>
+<p>If the delivery includes periods 1 and 2:</p>
+<p>$$ LC_{(1;2)} = FC + HC_{(1)} + HC_{(2)} $$</p>
+<p>$$ TQ_{(1;2)} = Q_{(1)} + Q_{(2)} $$</p>
+<p>If the delivery includes n periods:</p>
+<p>$$ LC_{(1;2;...;n)} = FC + HC_{(1)} + HC_{(2)} + ... + HC_{(n)} $$</p>
+<p>$$ TQ_{(1;2;...;n)} = Q_{(1)} + Q_{(2)} + ... + Q_{(n)} $$</p>
+<p>$$ \frac{LC_{(n)}}{TQ_{(n)}}&gt;\frac{LC_{(n+1)}}{TQ_{(n+1)}} $$</p>
+<p>$$ \frac{LC_{(n)}}{TQ_{(n)}}&lt;\frac{LC_{(n+1)}}{TQ_{(n+1)}} $$</p>
+<h3 id="balancing-between-fixed-and-variable-costs">Balancing between fixed and variable costs</h3>
+<p>The main criterion used in this model is to choose the number of periods covered by the supply so that the total cost of ownership is as close as possible to the cost of the order.</p>
+<p>If we only deliver for one period:</p>
+<p>$$ TFC_{(1)} = FC $$</p>
+<p>$$ THC_{(1)} = HC_{(1)} $$</p>
+<p>If the delivery includes periods 1 and 2:</p>
+<p>$$ TFC_{(1;2)} = FC $$</p>
+<p>$$ THC_{(1;2)} = HC_{(1)} + HC_{(2)} $$</p>
+<p>If the delivery includes n periods:</p>
+<p>$$ TFC_{(1;2;...;n)} = FC $$</p>
+<p>$$ THC_{(1;2;...;n)} = HC_{(1)} + HC_{(2)} + ... +  HC_{(n)} $$</p>
+<p>$$ TFC_n &gt; THC_n $$</p>
+<p>$$ TFC_n &lt; THC_n $$</p>
+<p>We appreciate how big the difference is between TFC and THC in the last 2 variants.</p>
+<p>We stop at that option whereTFC and THC are closest to each other as values.</p>
+<h3 id="which-method-should-we-choose">Which method should we choose?</h3>
+<h1 id="discussion">Discussion</h1>
+
+</body>
+</html>

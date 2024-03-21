@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>controlling the levels of stocks.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="controlling-the-levels-of-stocks-in-business-units">Controlling the levels of stocks in business-units</h1>
+<h2 id="versions-text---pdf-html-gdoc">Versions: text - <a href="https://docs.google.com/document/d/1PFvjcTjefLC5-4FEulmb9gtQe2zFbfxz56QSNRsgpJY/export?format=pdf">pdf</a>, <a href="https://docs.google.com/document/d/e/2PACX-1vSZM7a34OdUiPFmHq4VV2Rxv-ZepEOkEpM4944fERNSjgZcsJvjACqm9__JT1-cEkHxrQQAIq4OUJjd/pub">html</a>, <a href="https://docs.google.com/document/d/1PFvjcTjefLC5-4FEulmb9gtQe2zFbfxz56QSNRsgpJY/edit?usp=sharing">gdoc</a></h2>
+<p>Stock level dynamics. Decisions on safety stock. Reorder point planning. Refilling the stocks in distribution centers. Inventory Management System.</p>
+<h2 id="tasks">Tasks</h2>
+<p>The main tasks in inventory management are:</p>
+<ul>
+<li>When to put a new order for a future delivery: R =?</li>
+<li>What quantity should be in the order: Q =?</li>
+<li>Will we reserve a safety stock? Will this stock be consumable or should it always be available?</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Effective inventory management is a complex task. Its complexity is due to the simultaneous impact of multiple factors. Some factors make the inventory management process quite difficult:</p>
+<ul>
+<li>We operate a wide assortment</li>
+<li>Items have different strategic importance</li>
+<li>Items have poor predictability, high variation</li>
+<li>Items have expiration dates, morally become obsolete</li>
+<li>Individual items have special storage conditions (freezers, aggressive)</li>
+<li>We use several/many suppliers</li>
+<li>The range of suppliers overlaps, but not completely</li>
+<li>Suppliers offer different terms of delivery, payment, prices</li>
+<li>Suppliers offer various discounts for larger quantities</li>
+<li>Suppliers deliver the items with defects, delays</li>
+<li>We have a relatively small warehouse</li>
+<li>Delivery is intended for several of our stores</li>
+<li>We accept reservations with a remote execution date</li>
+<li>Differences in working days/holidays between us and suppliers</li>
+<li>Others</li>
+</ul>
+<p>Below we will begin by reviewing the simplified models - one item, one supplier, stable consumption, fixed quantity in one batch, etc. We will gradually add the variables to understand how specialists manage items in distribution centers with thousands of items and hundreds of suppliers.</p>
+<h2 id="key-concepts">Key concepts</h2>
+<h3 id="average-inventory-during-the-period">Average inventory during the period</h3>
+<p>The task of estimating average stocks seems trivial at first glance. The most accurate indicators of average stocks could be given by a system that tracks current stocks in real time. But even it does not always give accurate values ​​when we need to plan the average stocks in the future. For planning purposes, we may use different to find average inventory, depending on the data available and the desired accuracy:</p>
+<p><em>a) Average inventory = Inventory level at the end of the current period</em></p>
+<p>$$ \overline{I}=Q_{end} $$</p>
+<p>This approach is applicable to a very rough estimate. It gives relatively accurate values ​​if the products required for consumption in the current month are withdrawn from the warehouse at the very beginning of the period.</p>
+<p><em>b) Average inventory = Inventory level at the end of the current period + half of the SKU consumption for the period</em></p>
+<p>$$ \overline{I}=Q_{end}+\frac{D}{2} $$</p>
+<p>The higher accuracy variation of the above model. Consider that products intended for consumption in the current month use a significant amount of warehouse capacity and have an impact on current and average stocks. It gives high accuracy when the products intended for consumption in the current month are consumed evenly throughout the period.
+<em>c) Average inventory = (maximum inventory level + minimum inventory level) / 2</em></p>
+<p>$$ \overline{I}=\frac{Q_{\max}+Q_{\min}}{2} $$</p>
+<p><em>d) Average stock = the averaged stock data from several blocks (inventories)</em></p>
+<p>$$  \overline{I}= \sum \frac{Q_i}{n} $$</p>
+<p>It is used when there is data collected about the availability in the warehouse during relatively short intervals of time. It gives the more accurate result the higher the frequency of +- checks and the more stable the stock level (low variability in consumption).</p>
+<h3 id="reorder-point---reorder-point-r-or-rop">Reorder Point - Reorder Point (R or ROP)</h3>
+<p>R - signal level for re-request. This is the level (eg number of items) below which the stock should not fall without the attention of the supply specialist. Upon reaching this level, the specialist usually orders a new batch of the item. R is calculated so that the stock in the warehouse is just enough for the time required for delivery. This way, the item is always in stock, the new lot arrives close to when the old one runs out.</p>
+<h3 id="safety-stock-level">Safety Stock Level</h3>
+<p>Level of inventory in the warehouse necessary to avoid short-term shortages caused by fluctuations in demand, delivery delays, etc. Maintaining a warranty stock is associated with additional financial costs, &quot;frozen money&quot;. Companies independently decide on the volume of warranty stock, in view of the level of service they aim to provide to their customers.</p>
+<h3 id="service-level-objective-slo">Service level objective (SLO)</h3>
+<p>SLO is a percentage indicator reflecting the probability of the item being in stock.
+For example, in wholesale and retail, a 95% SLO (or 95% service level) means that 95% of the time the customer will be able to purchase the item. Respectively, in 5% of cases, there will be a refusal to purchase the item due to the lack of available units.</p>
+<h3 id="service-level-agreement-sla">Service level agreement (SLA)</h3>
+<p>An agreement between the supplier and the customer to offer the item on negotiated terms at a target service level. For example, Supplier A guarantees that material shortages in its warehouse will not exceed 5% of the time. Such agreements are often concluded for strategically important materials.</p>
+<h2 id="stock-dynamics">Stock dynamics</h2>
+<p>In today's market conditions, every company strives to optimize inventory management in order to operate with minimal amounts of working capital, minimal inventory holding costs, and minimal investment costs for building warehouse capacity. Characteristic features of an inventory management policy - the so-called &quot;Inventory dynamics&quot; for each item during a certain period.</p>
+<h3 id="basic-formulas">Basic formulas</h3>
+<p>Minimum level of stock in the warehouse:</p>
+<p>$$ Q_{min}=SS $$</p>
+<p>Maximum level of SKU in the warehouse:</p>
+<p>$$ Q_{max}=Q_{min}+Q_{ord} $$</p>
+<p>Average level of SKU in the warehouse:</p>
+<p>$$ \bar{I}=\frac{Q_{max}+Q_{min}}{2} $$</p>
+<p>Reorder point level:</p>
+<p>$$ R=\bar{d}L+SS $$</p>
+<p>where:
+\bar{d} - average daily consumption
+L - time of execution of a delivery order after a request
+Q_{max} - the maximum planned level of the item
+Q_{min} - the minimum planned level of the item
+\bar{I} - the item's average planned level
+SS - amount of safety stock
+Q_{ord} - the agreed quantity in one delivery
+R - the critical stock level for reordering</p>
+<h3 id="repurchase-tier-r-decisions">Repurchase Tier (R) Decisions</h3>
+<p>Specialists in the procurement or supply department monitor inventory levels. They should place orders for delivery of a new lot of the item before stocks approach critical levels. This is a tricky task as the items have different dynamics. For these needs, information systems are often equipped with a tool that signals the approach of the stock levels of a certain item to the critical level.
+In the figure below, the ROP level signals the procurement department in need of requisitioning the new lot.</p>
+<p><img src="WARN_REPLACE_IMG_URL" alt="">
+<em>Fig. 1. Point for the new purchase</em></p>
+<p>Dynamics of the stock of 1 item in one company:</p>
+<ul>
+<li>Initial stock of the item - 40 pcs.</li>
+<li>Average daily consumption - 5 pcs/day</li>
+<li>Quantity of 1 contractual delivery – 30 pcs.</li>
+<li>Delivery time after request - 3 days (calendar)</li>
+</ul>
+<p><strong>If the company operates without the warranty stock.</strong>
+We plan to deliver when</p>
+<p>$$ Q_i = 0 $$</p>
+<p>$$ R = 5 * 3 + 0 = 15 + 0 = 15 pcs $$</p>
+<p>$$ Q_{max} = 0 + 30 = 30 pcs $$</p>
+<p>$$ Q_{min} = 0 pcs $$</p>
+<p>$$ \bar{I} = \frac{30+0}{2} = 15 pcs $$</p>
+<p><img src="images\dynamics-noSS-4weeks.png" alt="">
+<em>Fig. 2. Dynamics of stocks without warranty stock</em></p>
+<p><strong>If the company provides for the warranty stock.</strong>
+Warranty, insurance stock - 10 pcs
+If we plan SS to always be available, then the supply from Qword must be realized at the moment when the 10 pieces from the guarantee stock will be reached.</p>
+<p>$$ R = 5 * 3 + 10 = 25 pcs $$</p>
+<p>$$ Q_{max} = 10 + 30 = 40 pcs $$</p>
+<p>$$ Q_min = 10 pcs $$</p>
+<p>$$ \bar{I} = \frac{40+10}{2} = 25 pcs $$</p>
+<p>![](images\dynamics-withSS-4weeks.png
+<em>Fig. 3. Dynamics of stocks with warranty stock (vertical axis = stock level; horizontal axis = days)</em></p>
+<h4 id="reordering-point-in-distribution-centers">Reordering Point in distribution centers:</h4>
+<p>The point R for the entire distribution network is calculated in a similar way, substituting the values ​​for average values ​​for the entire chain:</p>
+<p>$$ R=\bar{d}\cdot L+z\cdot\sigma_d\cdot\sqrt{L} $$</p>
+<p>where:
+L - time for delivery of the goods through the entire distribution chain: from the manufacturer, through DC, warehouses to retail auction.
+\bar{d} – average daily consumption across all retailers
+\sigma_d – standard deviation of aggregated demand from all retailers in the supply chain system
+z = z(x) - service factor (from Table 1.)</p>
+<p><strong>Table 1. Service factor according to the target service level</strong></p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>90%</th>
+<th>92%</th>
+<th>95%</th>
+<th>97%</th>
+<th>99%</th>
+<th>99.9%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>z</td>
+<td>1.29</td>
+<td>1.46</td>
+<td>1.65</td>
+<td>1.88</td>
+<td>2.33</td>
+<td>3.08</td>
+</tr>
+</tbody>
+</table>
+<p>For example, if the target service level is 95%, the company should enter a service factor of 1.65 into the formula
+You can independently calculate service factor using spreadsheets using function NORM.S.INV (or NORMSINV depending on software version)</p>
+<h3 id="decisions-on-the-level-of-warranty-stock">Decisions on the level of warranty stock</h3>
+<p>A safety stock has several purposes: to cover variations in consumption</p>
+<h4 id="the-warranty-stock-to-cover-a-set-period">The warranty stock to cover a set period</h4>
+<p>When we are given the target level of the guarantee stock in days, it means that we have to ensure such quantity in the stock that would be enough for the specified period:</p>
+<p>$$ SS=\bar{d}\cdot T_{SS} $$</p>
+<p>T_{SS} – consumption in days covered by the guarantee stock
+<strong>Example:</strong>
+Warranty, insurance stock = 2 days; Average daily consumption = 5 pcs/day</p>
+<p>$$ SS = 5 * 2 = 10 pcs $$</p>
+<h4 id="the-warranty-stock-to-cover-delivery-time-under-force-majeure-conditions">The warranty stock to cover delivery time under force majeure conditions</h4>
+<p>Often, companies operate with the minimum permissible levels of insurance guarantee stock:</p>
+<p>$$ SS=\bar{d}\cdot T_{urgent} $$</p>
+<p>T_{urgent} – delivery time in case of force majeure (urgent delivery)</p>
+<p><strong>Example:</strong>
+Express delivery time = 2 days; Average daily consumption = 5 pcs/day</p>
+<p>$$ SS = 5 * 2 = 10 pcs $$</p>
+<p>To achieve a higher level of service, the warranty stock can be increased.</p>
+<h4 id="the-warranty-stock-to-cover-the-target-level-of-service">The warranty stock to cover the target level of service</h4>
+<p>When consumption is volatile (eg items from Y or Z group), the practice is to increase the safety stock level in view of the variation in consumption and target service level.</p>
+<p>$$ SS=z\cdot\sigma_d\cdot\sqrt{L} $$</p>
+<p>sigma_d - the standard deviation of daily consumption,
+z = z(x) - coefficient depending on the target (set, planned) level of service (<em>x</em>) to the customers. It is selected from a table. (Table 1)</p>
+<h4 id="high-levels-vs-low-levels-of-warranty-stock">High levels vs. low levels of warranty stock</h4>
+<p>Typically, high levels of warranty stocks apply to certain goods and business practices - pharmaceuticals from a warehouse serving a hospital, supply of sites of strategic importance.
+According to David Simchi-Levi[^1] warranty stocks should not be maintained (except in the cases mentioned above), but efforts should be concentrated on defining<em>R</em>, so that there is never a shortage of stock with a probability higher than planned</p>
+<h3 id="request-execution-time">Request execution time</h3>
+<h4 id="fixed-delivery-time">Fixed delivery time</h4>
+<p>Fixed delivery time is used in different situations:
+a) procurement department does not care about high accuracy of estimates and bets an approximate number
+b) the supplier has an absolutely strict production and delivery plan (JIT approach)
+b) the deadline for production and incoming control can be ignored</p>
+<h4 id="delivery-time-as-sum-of-components">Delivery time as sum of components</h4>
+<p>Request execution time (days):</p>
+<p>$$ L=T_{prod}+T_{trans}+T_{in} $$</p>
+<p>T_{prod} - time for making the order
+T_{trans}  - time to transport the order
+T_{in} - time for conducting incoming control</p>
+<h4 id="consideration-of-uncertainty-in-the-delivery-time">Consideration of uncertainty in the delivery time</h4>
+<p>When the procurement department observes variations in the actual delivery times, it is often the case that the request is sent several days earlier. Thus, delays on the supplier's side are expected to be reduced. This approach is acceptable when an earlier delivery causes fewer problems than a later one. To include this time buffer, the following formula applies:</p>
+<p>$$ R = \bar d \cdot \bar L + z \cdot \sigma_L \cdot \bar d $$</p>
+<p>When the variation has a strong impact on both demand and lead time, the following formula applies (<a href="https://slideplayer.com/slide/1480812/">Source</a>):</p>
+<p>$$ R=\bar{d} \cdot \bar{L}+z\cdot\sqrt{\bar{L} \cdot\sigma_d^2+\bar{d^2}\cdot\sigma_L^2} $$</p>
+<h4 id="consideration-of-weekendsholidays">Consideration of weekends/holidays</h4>
+<p>When planning deliveries, the procurement specialist takes into account the working days of both the own outlets and those of the supplier. Company holidays affect consumption, while supplier holidays affect delivery time. When calculating consumption time during the delivery time, holidays should be taken into account as follows:</p>
+<ul>
+<li>Only days that fall within the current delivery period are counted</li>
+<li>Company holidays are deducted from the delivery time</li>
+<li>Supplier holidays are added to the delivery time</li>
+<li>If the days off of the company and the supplier coincide</li>
+</ul>
+<p>Assume that the company operates 6 days/week and the supplier 5 days/week.
+Delivery is within 3 days. There is no warranty stock. We plan to deliver the moment when<em>Q**i</em> = 0
+If we are approaching the holidays, then the request level will be:
+<em>R</em> = 5 * (3 - 1 holiday (company) + 2 holidays (supplier)) + 0 = 20 + 0 = 20 pcs
+If, however, the situation occurs at the beginning of a week - the request will be made at the level of R = 15 pcs:
+<em>R</em> = 5 * (3 - 0 holiday (company) + 0 holiday (supplier)) + 0 = 15 + 0 = 15 pcs
+If delivery time is more than one week, we include all weekends/holidays which</p>
+<h3 id="consideration-of-other-factors">Consideration of other factors</h3>
+<p>There are many modifications to the repurchase point formulas. Such modifications allow the tool to behave adequately in the complexity of the environment for which it is intended (factors complicating inventory management we have discussed above). Information systems manufacturers often make it a proprietary tool to maintain competitive advantages. This does not allow to freely consider the formulas embedded in multiple information systems. But the basis of all of them is the same.</p>
+<h2 id="inventory-management-system-ims">Inventory Management System (IMS)</h2>
+<p>Inventory Management System - is an information system that helps the procurement department to track inventory, to react when product stocks approach critical levels. IMS works in tight integration with enterprise resource planning (ERP) systems, warehouse management systems (WMS), and often its functions are directly embedded in these modules.</p>
+<p><img src="WARN_REPLACE_IMG_URL" alt="">
+<em>Fig. 4. Devices working in a single IMS system</em>
+The task of IMS is to provide accurate information about stock in the warehouse. Algorithms for the automatic release of requests to suppliers to replenish stocks in the warehouse are integrated into the individual systems. Typically, systems signal employees through a system of purchasing priorities. For the specific example above, the information system could issue the following signals:</p>
+<ol>
+<li>When the specified item's stock levels approach near 35-30 (also depends on the consumption rate) the item will receive a base priority for purchase (eg, be marked green). This will show the procurement specialist that he can now include this item when forming a request for other items to the same supplier.</li>
+<li>After crossing the limit of 25 items, the system should increase the item's priority to a higher one (for example, color it yellow). This means that the employee should place an order as soon as possible.</li>
+<li>After crossing the limit of 15 pieces, the system should increase the item's priority to very high. This means that the warehouse has already started to &quot;eat&quot; the warranty stock and there is a high risk of falling into deficit.</li>
+<li>There may be additional priority levels. For example, when the levels drop to 10-5 pieces, the system assigns the highest priority to the item (for example, colors it black). This means that a shortage is inevitable and the procurement specialist must seek channels for urgent supply of the item to reduce the risk.</li>
+<li>It can also have negative priorities (eg colored blue or purple). This means that there is excess stock or the item is scheduled for sale/liquidation and specialists should purchase additional quantities from it only in exceptional cases.</li>
+</ol>
+<p><img src="WARN_REPLACE_IMG_URL" alt="">
+<em>Fig. 5. Example of prioritization of purchase orders - Replenishment monitor in SAP. Source: logiplus.de</em></p>
+<h2 id="integration-of-the-rop-toolkit-into-popular-erp-systems">Integration of the ROP toolkit into popular ERP systems</h2>
+<p>SAP Source: help.sap.com/docs/
+In reorder point planning, procurement is triggered when the sum of plant stock and firmed receipts falls below the reorder point .
+The following values are important for defining the reorder point:</p>
+<ul>
+<li>Safety stock</li>
+<li>Average consumption</li>
+<li>Replenishment lead time
+The following values are important for defining the safety stock:</li>
+<li>Past consumption values (historical data) or future requirements</li>
+<li>Vendor/production delivery timelines</li>
+<li>Service level to be achieved</li>
+<li>Forecast error, that is, the deviation from the expected requirements</li>
+</ul>
+<p>Oracle Business Suite <a href="https://docs.oracle.com/cd/A60725_05/html/comnls/us/inv/roplan.htm">https://docs.oracle.com/</a>
+Reorder point planning uses demand forecasts to decide when to order a new quantity to avoid dipping into safety stock. Reorder point planning suggests a new order for an item when the available quantity--on-hand quantity plus planned receipts--drops below the item's safety stock level plus forecast demand for the item during its replenishment lead time. The suggested order quantity is an economic order quantity that minimizes the total cost of ordering and carrying inventory. Oracle Inventory can automatically generate requisitions to inform your purchasing department that a replenishment order is required to supply your organization.
+Order lead time is the total of the item's processing, preprocessing, and postprocessing lead times.
+If the forecast is correct and the order arrives on time, the inventory level should be right at the safety stock level at the time of receipt. In cases where the desired safety stock level changes during the order lead time, Oracle Inventory uses the largest safety stock quantity during the lead time.</p>
+<p>Microsoft NAV <a href="https://learn.microsoft.com/en-us/dynamics-nav-app/design-details-the-role-of-the-reorder-point">https://learn.microsoft.com/en-us/dynamics-nav-app/</a>
+The planning system will suggest a forward-scheduled supply order at the point when the projected inventory passes below the reorder point.
+The reorder point reflects a certain inventory level. However, inventory levels can move significantly during the time bucket and, therefore, the planning system must constantly monitor the projected available inventory.</p>
+<h2 id="more-information">More information</h2>
+<p><a href="https://slideplayer.com/slide/1480812/">https://slideplayer.com/slide/1480812/</a> - Lesson 17 Inventory management
+<a href="https://www.inventoryops.com/safety_stock.htm">https://www.inventoryops.com/safety_stock.htm</a> - Optimizing Safety Stock. Terminology and calculations. Understanding the statistical model and factoring in additional variables.</p>
+<p>[^1]: Designing and Managing the Supply Chain: Concepts, Strategies, and Case Studies, David Simchi-Levi, McGraw Hill Professional, 2003, ISBN: 9780072492569</p>
+
+</body>
+</html>
