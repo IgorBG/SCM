@@ -1,5 +1,5 @@
 # The basics of supply chains
-Versions: text - [pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/basics/the_basics_of_supply_chains.pdf)  [html](https://github.com/IgorBG/SCM/blob/main/source/lectures/basics/the_basics_of_supply_chains.html)  [source](https://github.com/IgorBG/SCM/blob/main/lectures/basics/the_basics_of_supply_chains.md)
+Versions: text - [pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/basics/the_basics_of_supply_chains.pdf)  [html](https://github.com/IgorBG/SCM/blob/main/source/lectures/basics/the_basics_of_supply_chains.html)  [source](https://github.com/IgorBG/SCM/blob/main/source/lectures/basics/the_basics_of_supply_chains.md)
 
 Main objectives:
 * Understanding supply chain objectives and the impact of supply chain decisions on the business results;
