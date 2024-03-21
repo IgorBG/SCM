@@ -1,6 +1,6 @@
 # Controlling the levels of stocks in business-units
 
-## Versions: text - [pdf](https://docs.google.com/document/d/1PFvjcTjefLC5-4FEulmb9gtQe2zFbfxz56QSNRsgpJY/export?format=pdf), [html](https://docs.google.com/document/d/e/2PACX-1vSZM7a34OdUiPFmHq4VV2Rxv-ZepEOkEpM4944fERNSjgZcsJvjACqm9__JT1-cEkHxrQQAIq4OUJjd/pub), [gdoc](https://docs.google.com/document/d/1PFvjcTjefLC5-4FEulmb9gtQe2zFbfxz56QSNRsgpJY/edit?usp=sharing)
+Versions: notes - [pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/stock_control/controlling_the_levels_of_stocks.pdf), [html](https://github.com/IgorBG/SCM/blob/main/source/lectures/stock_control/controlling_the_levels_of_stocks.html), [source](https://github.com/IgorBG/SCM/blob/main/source/lectures/stock_control/controlling_the_levels_of_stocks.md)
 
 Stock level dynamics. Decisions on safety stock. Reorder point planning. Refilling the stocks in distribution centers. Inventory Management System.
 

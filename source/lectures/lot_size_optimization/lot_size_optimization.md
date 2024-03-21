@@ -1,6 +1,6 @@
 # Lot size decisions in supply planning. The economic quantity of the supply.
 
-Versions: text -[pdf](https://docs.google.com/document/d/1az90FFb5EYhQkwfV2kw4Z-aIxCNdjH5SEi3CSvqcO0E/export?format=pdf), [html](https://docs.google.com/document/d/e/2PACX-1vReKWX9PcmRzH4HS75W0Sz5WuymGkynYmSIMee9UGVVx4N9vLT-_1Ar00Y15a6aN8z5A_oO2FPpswLb/pub), [gdoc](https://docs.google.com/document/d/1az90FFb5EYhQkwfV2kw4Z-aIxCNdjH5SEi3CSvqcO0E/view)
+Versions: notes -[pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/lot_size_optimization/lot_size_optimization.pdf), [html](https://github.com/IgorBG/SCM/blob/main/source/lectures/lot_size_optimization/lot_size_optimization.html), [source](https://github.com/IgorBG/SCM/blob/main/source/lectures/lot_size_optimization/lot_size_optimization.md)
 
 Model for the economic quantity to supply. Least Cost Per Period Model
 

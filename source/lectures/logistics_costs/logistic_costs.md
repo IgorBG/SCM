@@ -1,6 +1,6 @@
 # Inventory cost planning. Logistics costs
 
-Versions: notes - [pdf](https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/export?format=pdf), [html](https://docs.google.com/document/d/e/2PACX-1vRt3eyx8DkNNJhVo1NIVDdDXZzUz-rt7zpnW-ltniLp9c7fydPdp2Kp9lYFs-MHCgsh4_6CXWll_Gxn/pub), [gdoc](https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/view)
+Versions: notes - [pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.pdf), [html](https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.html), [source](https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.md)
 
 Cost management in SKU inventory management; Modeling of material supplies at constant consumption level; Modeling supply under variable consumption
 
