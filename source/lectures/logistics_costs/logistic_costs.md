@@ -459,9 +459,9 @@ Example: At the beginning of the month there are 30 units in the warehouse, and 
 
 ## References
 
-1. I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest PDF version: `https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/export?format=pdf`
+1. I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest PDF version: [`https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/export?format=pdf`](https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.pdf)
 
-2. I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Online html version: `https://docs.google.com/document/d/e/2PACX-1vRt3eyx8DkNNJhVo1NIVDdDXZzUz-rt7zpnW-ltniLp9c7fydPdp2Kp9lYFs-MHCgsh4_6CXWll_Gxn/pub`
+2. I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Online html version: [`https://docs.google.com/document/d/e/2PACX-1vRt3eyx8DkNNJhVo1NIVDdDXZzUz-rt7zpnW-ltniLp9c7fydPdp2Kp9lYFs-MHCgsh4_6CXWll_Gxn/pub`](https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.html)
 
-3. I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest Google Doc version: `https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/view`
+3. I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest markdown version: [`https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/view`](https://github.com/IgorBG/SCM/edit/main/source/lectures/logistics_costs/logistic_costs.md)
 
