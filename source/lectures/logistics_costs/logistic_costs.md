@@ -457,6 +457,9 @@ Example: At the end of January there are 30 pieces left in the warehouse, in Feb
 
 Example: At the beginning of the month there are 30 units in the warehouse, and at the end of the month 0 units. The model calculates that the average consumption is 1 pc/day, and the average stock is 15 pc. In practice, these 30 units were possibly consumed on the first day. Managers can plan on a weekly or daily basis to reduce the impact of this limitation.
 
+## Test
+Test for the lecture material: [https://forms.gle/9qVSELxTf1btfgVP9](https://forms.gle/9qVSELxTf1btfgVP9)
+
 ## References
 
 1. I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest PDF version: [https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.pdf)
