@@ -4,7 +4,7 @@ Versions: notes - [pdf](https://github.com/IgorBG/SCM/blob/main/source/lectures/
 
 Cost management in SKU inventory management; Modeling of material supplies at constant consumption level; Modeling supply under variable consumption
 
-Keywords: stock keeping unit ?(SKU); ordering cost, holding cost, logistics cost
+Keywords: stock keeping unit (SKU); ordering cost, holding cost, logistics cost
 
 Dynamic stock management models are used in information systems (ERP, WMS, IMS) supporting and automating the work of the supply department, warehouse, transport and others. Supply modeling can include running a simulation, forecasting consumption, estimating costs. In this lecture we will focus on cost estimation. Thus, the models we use show what costs are expected for one or another procurement option.
 
@@ -18,13 +18,13 @@ D - Consumption of SKUs for the period or Quantity of SKUs purchased
 
 V - The unit price of SKU
 
-Q~i~ - The current stock level in the warehouse (as of time/month i)
+Q(i) - The current stock level in the warehouse (as of time/month i)
 
-Q~ord~ - Lot size purchased
+Q(ord) - Lot size purchased
 
-Q~min~ - Minimum planned stock. Usually Q~min~= safety stock or balance in the warehouse at the end of the period.
+Q(min) - Minimum planned stock. Usually Q(min) = safety stock or balance in the warehouse at the end of the period.
 
-Q~max~ - Maximum planned stock. Usually Q~max ~= minimum planned stock + delivery quantity
+Q(max) - Maximum planned stock. Usually Q(max) = minimum planned stock + delivery quantity
 
 ## Determination of SCM inventory management costs
 
@@ -292,31 +292,31 @@ Below is a framework of one such model describing the supply, consumption and ba
 
 Stock at the beginning of the month = stock at the end of the previous month + delivery in the current month.
 
-Q(i)~begin~ = Q(i-1)~end~ + Q(i)~ord~
+$$ Q_{begin}(i) = Q_{end}(i-1) + Q_{ord}(i) $$ 
 
 The maximum level is equal to the starting stock.
 
-Q(i)~max~ = Q(i-1)~end~ + Q(i)~ord~
+$$ Q_{max}(i) = Q_{end}(i-1) + Q_{ord}(i) $$ 
 
 Stock at the end of the month = stock at the beginning - consumption.
 
-Q(i)~end~ = Q(i-1)~end~ + Q(i)~ord~ - d(i)
+$$ Q_{end}(i) = Q_{end}(i-1) + Q_{ord}(i) - d(i) $$ 
 
 The planned minimum stock level is equal to the stock at the end of the month.
 
-Q(i)~min~ = Q(i)~end~ 
+$$ Q_{min}(i)= Q_{end}(i) $$ 
 
 a) Average stocks = sum of high and low divided by two
 
-I = (Q(i)~max~ + Q(i)~min~) / 2
+$$ I = (Q_{max}(i) + Q_{min}(i)) / 2 $$ 
 
 b) Average stocks = stock at the end of the previous month + delivery - half of consumption.
 
-I = Q(i-1)~end~ + Q(i)~ord~ - d(i)/2
+$$ I = Q_{end}(i-1) + Q_{ord}(i) - d(i)/2 $$ 
 
-Quantity in one delivery covering n periods (Q~ord~(k)).
+Quantity in one delivery covering n periods (Q_{ord}(k)).
 
-Q~ord~(k) = d1 + d2 + ... + dn
+$$ Q_{ord}(k) = d_1 + d_2 + ... + d_n $$ 
 
 Where d1 is consumption in the first month, d2 is in the second month.
 
@@ -334,13 +334,13 @@ Let's assume that the supply specialist decides that deliveries will be made eve
 
 *Figure 7. Four-month period deliveries at constant consumption of SKU*
 
-We add stock level to each month. Thus, at the beginning of January, the stock is at the level of 400 pieces. This is Q~max~. During the month we use up 100 and at the end of the month we have 300 left. This is Q~min~. The average stock in January, respectively, will be 350 pcs.
+We add stock level to each month. Thus, at the beginning of January, the stock is at the level of 400 pieces. This is Q(max). During the month we use up 100 and at the end of the month we have 300 left. This is Q(min). The average stock in January, respectively, will be 350 pcs.
 
 ![](images/constant_consumption_03_eng.png)
 
 *Figure 8. Consumption, supply, and average inventory in the table model for supply planning at constant consumption.*
 
-Please note: the average inventory on a year scale is equal to 200 pieces (we get it as the arithmetic average value, i.e. we divide the sum of the average monthly inventory (2400) by the number of months). This is entirely consistent with the result of the baseline model, which states that, at constant consumption, the average stock per year is equal to Q~ord~/2.
+Please note: the average inventory on a year scale is equal to 200 pieces (we get it as the arithmetic average value, i.e. we divide the sum of the average monthly inventory (2400) by the number of months). This is entirely consistent with the result of the baseline model, which states that, at constant consumption, the average stock per year is equal to Q(ord)/2.
 
 #### Application of the spreadsheet model for replenishment process under variable consumption
 
@@ -358,7 +358,7 @@ Let's assume that the supply specialist decides that deliveries will take place 
 
 *Figure 10. Variable consumption and delivery in the spreadsheet model for replenishment process.*
 
-We add stock level to each month. Thus, at the beginning of January, the stock was at the level of 214 pieces. This is Q~max~. During the month we use up 10, and at the end of the month we have 204 left. This is Q~min~. The average stock in January, respectively, will be 209 pcs.
+We add stock level to each month. Thus, at the beginning of January, the stock was at the level of 214 pieces. This is Q(max). During the month we use up 10, and at the end of the month we have 204 left. This is Q(min). The average stock in January, respectively, will be 209 pcs.
 
 ![](images/variable_consumption_03_eng.png)
 
