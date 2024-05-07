@@ -118,6 +118,9 @@ Factors affecting the economy of Bulgaria in the context of the organization of 
 * The price of energy resources is constantly increasing;
 * Raw materials markets and goods markets for Bulgaria are becoming more and more distant.
 
+## Test
+Test for the lecture material:[https://forms.gle/qtFr15sdfYscYA1cA](https://forms.gle/qtFr15sdfYscYA1cA)
+
 ## Additional reading:
 1. M. Rakovska. Supply chain management - a factor for competitiveness. Railway transport magazine. (*М. Раковска. Управление на веригата на доставките - фактор за конкурентоспособността. Списание Железопътен транспорт* [original](https://www.jptactis.com/Archives/jpt605/rakovska.htm), [archive](https://docs.google.com/document/d/1zgWwAFSpffqATbABh2kdds_1YG7wT4wYWB3v-CZDmQM/preview))
 2. M. Rakovska. Theoretical aspects of supply chain management. 2009. Scientific works UNSS (*М. Раковска. Теоретични аспекти на управлението на веригата на доставките. 2009. Научни трудове УНСС* [original](https://www.unwe.bg/uploads/ResearchPapers/Research%20Papers_vol2_2009_No6_M%20Rakovska.pdf), [archive](https://drive.google.com/file/d/1OYRbHhzJSLpP5eelu6DzqpRBaElB50WI/view?usp=sharing))
