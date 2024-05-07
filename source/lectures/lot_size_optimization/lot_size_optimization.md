@@ -307,4 +307,9 @@ We stop at that option whereTFC and THC are closest to each other as values.
 
 ### Which method should we choose?
 
-# Discussion
+## Test
+Please fill the test on the lecture material: [https://forms.gle/irWmpmx3vcWhHfoe6](https://forms.gle/irWmpmx3vcWhHfoe6)
+
+## Discussion
+
+
