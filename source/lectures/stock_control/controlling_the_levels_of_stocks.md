@@ -283,6 +283,9 @@ Microsoft NAV [https://learn.microsoft.com/en-us/dynamics-nav-app/](https://lear
 The planning system will suggest a forward-scheduled supply order at the point when the projected inventory passes below the reorder point.
 The reorder point reflects a certain inventory level. However, inventory levels can move significantly during the time bucket and, therefore, the planning system must constantly monitor the projected available inventory.
 
+## Test
+Please fill the test on the lecture material: [https://forms.gle/9qVSELxTf1btfgVP9](https://forms.gle/9qVSELxTf1btfgVP9)
+
 ## More information
 [https://slideplayer.com/slide/1480812/](https://slideplayer.com/slide/1480812/) - Lesson 17 Inventory management
 [https://www.inventoryops.com/safety_stock.htm](https://www.inventoryops.com/safety_stock.htm) - Optimizing Safety Stock. Terminology and calculations. Understanding the statistical model and factoring in additional variables.
