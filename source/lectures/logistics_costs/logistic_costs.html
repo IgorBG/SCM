@@ -368,17 +368,17 @@ code {
 <h1 id="inventory-cost-planning-logistics-costs">Inventory cost planning. Logistics costs</h1>
 <p>Versions: notes - <a href="https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.pdf">pdf</a>, <a href="https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.html">html</a>, <a href="https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.md">source</a></p>
 <p>Cost management in SKU inventory management; Modeling of material supplies at constant consumption level; Modeling supply under variable consumption</p>
-<p>Keywords: stock keeping unit ?(SKU); ordering cost, holding cost, logistics cost</p>
+<p>Keywords: stock keeping unit (SKU); ordering cost, holding cost, logistics cost</p>
 <p>Dynamic stock management models are used in information systems (ERP, WMS, IMS) supporting and automating the work of the supply department, warehouse, transport and others. Supply modeling can include running a simulation, forecasting consumption, estimating costs. In this lecture we will focus on cost estimation. Thus, the models we use show what costs are expected for one or another procurement option.</p>
 <p>The symbols we use in formulas:</p>
 <p>A - Standard cost of one delivery</p>
 <p>r - Rate of holding cost</p>
 <p>D - Consumption of SKUs for the period or Quantity of SKUs purchased</p>
 <p>V - The unit price of SKU</p>
-<p>Q~i~ - The current stock level in the warehouse (as of time/month i)</p>
-<p>Q~ord~ - Lot size purchased</p>
-<p>Q~min~ - Minimum planned stock. Usually Q~min~= safety stock or balance in the warehouse at the end of the period.</p>
-<p>Q~max~ - Maximum planned stock. Usually Q~max ~= minimum planned stock + delivery quantity</p>
+<p>Q(i) - The current stock level in the warehouse (as of time/month i)</p>
+<p>Q(ord) - Lot size purchased</p>
+<p>Q(min) - Minimum planned stock. Usually Q(min) = safety stock or balance in the warehouse at the end of the period.</p>
+<p>Q(max) - Maximum planned stock. Usually Q(max) = minimum planned stock + delivery quantity</p>
 <h2 id="determination-of-scm-inventory-management-costs">Determination of SCM inventory management costs</h2>
 <p>Looking at the structure of the total costs of supplying a business unit with SKU, a few significant feathers stand out: the company buys SKU, then it must provide the means to deliver these materials to its warehouse, and finally cover the cost of their stay in its warehouse . In the same logic, we distinguish between main components of costs related to inventory management:</p>
 <ul>
@@ -634,19 +634,19 @@ $$</p>
 <p><em>Figure 5. Visual representation of the supply planning spreadsheet model. Top: area of fixed indicators, below - dynamic indicators.</em></p>
 <h4 id="the-formulas-used-in-the-spreadsheet-model">The formulas used in the spreadsheet model</h4>
 <p>Stock at the beginning of the month = stock at the end of the previous month + delivery in the current month.</p>
-<p>Q(i)~begin~ = Q(i-1)~end~ + Q(i)~ord~</p>
+<p>$$ Q_{begin}(i) = Q_{end}(i-1) + Q_{ord}(i) $$</p>
 <p>The maximum level is equal to the starting stock.</p>
-<p>Q(i)~max~ = Q(i-1)~end~ + Q(i)~ord~</p>
+<p>$$ Q_{max}(i) = Q_{end}(i-1) + Q_{ord}(i) $$</p>
 <p>Stock at the end of the month = stock at the beginning - consumption.</p>
-<p>Q(i)~end~ = Q(i-1)~end~ + Q(i)~ord~ - d(i)</p>
+<p>$$ Q_{end}(i) = Q_{end}(i-1) + Q_{ord}(i) - d(i) $$</p>
 <p>The planned minimum stock level is equal to the stock at the end of the month.</p>
-<p>Q(i)~min~ = Q(i)~end~</p>
+<p>$$ Q_{min}(i)= Q_{end}(i) $$</p>
 <p>a) Average stocks = sum of high and low divided by two</p>
-<p>I = (Q(i)~max~ + Q(i)~min~) / 2</p>
+<p>$$ I = (Q_{max}(i) + Q_{min}(i)) / 2 $$</p>
 <p>b) Average stocks = stock at the end of the previous month + delivery - half of consumption.</p>
-<p>I = Q(i-1)~end~ + Q(i)~ord~ - d(i)/2</p>
-<p>Quantity in one delivery covering n periods (Q~ord~(k)).</p>
-<p>Q~ord~(k) = d1 + d2 + ... + dn</p>
+<p>$$ I = Q_{end}(i-1) + Q_{ord}(i) - d(i)/2 $$</p>
+<p>Quantity in one delivery covering n periods (Q_{ord}(k)).</p>
+<p>$$ Q_{ord}(k) = d_1 + d_2 + ... + d_n $$</p>
 <p>Where d1 is consumption in the first month, d2 is in the second month.</p>
 <h4 id="application-of-the-flexible-model-for-modeling-supplies-at-constant-consumption">Application of the flexible model for modeling supplies at constant consumption</h4>
 <p>To build the spreadsheet model let's start by plotting consumption.</p>
@@ -655,10 +655,10 @@ $$</p>
 <p>Let's assume that the supply specialist decides that deliveries will be made evenly every 4 months. This means that each delivery will include 400 pcs.</p>
 <p><img src="images/constant_consumption_02_eng.png" alt=""></p>
 <p><em>Figure 7. Four-month period deliveries at constant consumption of SKU</em></p>
-<p>We add stock level to each month. Thus, at the beginning of January, the stock is at the level of 400 pieces. This is Q~max~. During the month we use up 100 and at the end of the month we have 300 left. This is Q~min~. The average stock in January, respectively, will be 350 pcs.</p>
+<p>We add stock level to each month. Thus, at the beginning of January, the stock is at the level of 400 pieces. This is Q(max). During the month we use up 100 and at the end of the month we have 300 left. This is Q(min). The average stock in January, respectively, will be 350 pcs.</p>
 <p><img src="images/constant_consumption_03_eng.png" alt=""></p>
 <p><em>Figure 8. Consumption, supply, and average inventory in the table model for supply planning at constant consumption.</em></p>
-<p>Please note: the average inventory on a year scale is equal to 200 pieces (we get it as the arithmetic average value, i.e. we divide the sum of the average monthly inventory (2400) by the number of months). This is entirely consistent with the result of the baseline model, which states that, at constant consumption, the average stock per year is equal to Q~ord~/2.</p>
+<p>Please note: the average inventory on a year scale is equal to 200 pieces (we get it as the arithmetic average value, i.e. we divide the sum of the average monthly inventory (2400) by the number of months). This is entirely consistent with the result of the baseline model, which states that, at constant consumption, the average stock per year is equal to Q(ord)/2.</p>
 <h4 id="application-of-the-spreadsheet-model-for-replenishment-process-under-variable-consumption">Application of the spreadsheet model for replenishment process under variable consumption</h4>
 <p>Let's see how the spreadsheet model can be used to model the supply plan under variable demand. Each delivery can now include a different volume of products; there may be deliveries spanning a different number of months.</p>
 <p>Graphically and tabularly, the dynamics of variable consumption can look like this:</p>
@@ -667,7 +667,7 @@ $$</p>
 <p>Let's assume that the supply specialist decides that deliveries will take place every 4 months. Each delivery will include exactly the amount needed for 4 months. With consumption for the first 4 months, this means that 214 units will be included in the first delivery (consumption from January to April: 10+62+12+130).</p>
 <p><img src="images/variable_consumption_02_eng.png" alt=""></p>
 <p><em>Figure 10. Variable consumption and delivery in the spreadsheet model for replenishment process.</em></p>
-<p>We add stock level to each month. Thus, at the beginning of January, the stock was at the level of 214 pieces. This is Q~max~. During the month we use up 10, and at the end of the month we have 204 left. This is Q~min~. The average stock in January, respectively, will be 209 pcs.</p>
+<p>We add stock level to each month. Thus, at the beginning of January, the stock was at the level of 214 pieces. This is Q(max). During the month we use up 10, and at the end of the month we have 204 left. This is Q(min). The average stock in January, respectively, will be 209 pcs.</p>
 <p><img src="images/variable_consumption_03_eng.png" alt=""></p>
 <p><em>Figure 11. Variable consumption, delivery and average inventory in the spreadsheet model for replenishment process.</em></p>
 <p><strong>Total Acquisition Cost (TMC)</strong>. There are no peculiarities compared to the general model. We multiply the total number of purchased materials by their price.</p>
@@ -907,13 +907,13 @@ $$</p>
 <h2 id="references">References</h2>
 <ol>
 <li>
-<p>I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest PDF version: <code>https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/export?format=pdf</code></p>
+<p>I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest PDF version: <a href="https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.pdf">https://github.com/IgorBG/SCM/blob/main/source/lectures/logistics_costs/logistic_costs.pdf</a></p>
 </li>
 <li>
-<p>I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Online html version: <code>https://docs.google.com/document/d/e/2PACX-1vRt3eyx8DkNNJhVo1NIVDdDXZzUz-rt7zpnW-ltniLp9c7fydPdp2Kp9lYFs-MHCgsh4_6CXWll_Gxn/pub</code></p>
+<p>I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Online html version: <a href="https://github.com/IgorBG/SCM/edit/main/source/lectures/logistics_costs/logistic_costs.html">https://github.com/IgorBG/SCM/edit/main/source/lectures/logistics_costs/logistic_costs.html</a></p>
 </li>
 <li>
-<p>I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest Google Doc version: <code>https://docs.google.com/document/d/1UZ3RkRBojOX-zV5XVZu1X5fOAjqc7lhS8Pdd_Wfvrk4/view</code></p>
+<p>I.Sheludko. Supply Chain Management. Topic: Inventory cost planning. Logistics costs. Lecture notes. Latest markdown version: <a href="https://github.com/IgorBG/SCM/edit/main/source/lectures/logistics_costs/logistic_costs.md">https://github.com/IgorBG/SCM/edit/main/source/lectures/logistics_costs/logistic_costs.md</a></p>
 </li>
 </ol>
 
